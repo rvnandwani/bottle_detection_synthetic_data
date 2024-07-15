@@ -1,0 +1,25 @@
+# Blender MTL File: 'None'
+# Material Count: 2
+
+newmtl body
+Ns 79.999987
+Ka 1.000000 1.000000 1.000000
+Kd 0.000000 0.000000 0.000000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 3
+map_Bump 350ml-B_Normal_4096.png
+map_Kd Can_500ml_350ml_180ml_Diffuse_4096.png
+
+newmtl label
+Ns 90.000016
+Ka 1.000000 1.000000 1.000000
+Kd 0.024000 0.024000 0.024000
+Ks 0.140000 0.140000 0.140000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 3
+map_Kd PET_bottle_525ml_D_001_Diffuse_4096.png

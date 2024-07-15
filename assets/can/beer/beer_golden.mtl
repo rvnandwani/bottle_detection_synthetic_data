@@ -1,0 +1,27 @@
+# Blender MTL File: 'None'
+# Material Count: 2
+
+newmtl body
+Ns 79.999987
+Ka 1.000000 1.000000 1.000000
+Kd 0.000000 0.000000 0.000000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 3
+map_Bump 350ml-A_Normal_4096.png
+map_Kd Can_350ml_A_Diffuse_4096.png
+map_Ks Can_350ml_A_Specular_4096.png
+
+newmtl label
+Ns 79.999987
+Ka 1.000000 1.000000 1.000000
+Kd 0.000000 0.000000 0.000000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 3
+map_Kd Can_350ml_000_BEER_Diffuse_4096.png
+map_Ks Can_350ml_000_BEER_Diffuse_4096.png
