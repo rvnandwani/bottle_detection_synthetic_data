@@ -1,132 +1,197 @@
 [
     {
-        "id": 129,
+        "id": 155,
         "image_id": 9,
         "img_name": "Image_9.png",
-        "categry_id": 2,
-        "category": "./assets/bottle/evian/waterbottle_6.obj",
+        "categry_id": 1,
+        "category": "bottle",
         "bbox": [
-            0,
-            119,
-            63,
-            457
+            163,
+            207,
+            210,
+            333
         ]
     },
     {
-        "id": 130,
+        "id": 156,
+        "image_id": 9,
+        "img_name": "Image_9.png",
+        "categry_id": 1,
+        "category": "bottle",
+        "bbox": [
+            393,
+            268,
+            441,
+            355
+        ]
+    },
+    {
+        "id": 157,
+        "image_id": 9,
+        "img_name": "Image_9.png",
+        "categry_id": 1,
+        "category": "bottle",
+        "bbox": [
+            243,
+            244,
+            288,
+            329
+        ]
+    },
+    {
+        "id": 158,
+        "image_id": 9,
+        "img_name": "Image_9.png",
+        "categry_id": 1,
+        "category": "bottle",
+        "bbox": [
+            80,
+            144,
+            139,
+            315
+        ]
+    },
+    {
+        "id": 159,
+        "image_id": 9,
+        "img_name": "Image_9.png",
+        "categry_id": 1,
+        "category": "bottle",
+        "bbox": [
+            150,
+            155,
+            205,
+            314
+        ]
+    },
+    {
+        "id": 160,
+        "image_id": 9,
+        "img_name": "Image_9.png",
+        "categry_id": 1,
+        "category": "bottle",
+        "bbox": [
+            271,
+            178,
+            377,
+            406
+        ]
+    },
+    {
+        "id": 161,
+        "image_id": 9,
+        "img_name": "Image_9.png",
+        "categry_id": 1,
+        "category": "bottle",
+        "bbox": [
+            103,
+            150,
+            177,
+            317
+        ]
+    },
+    {
+        "id": 162,
         "image_id": 9,
         "img_name": "Image_9.png",
         "categry_id": 2,
-        "category": "./assets/bottle/koicha/koicha.obj",
+        "category": "can",
         "bbox": [
-            18,
-            61,
-            133,
+            220,
+            253,
+            269,
+            349
+        ]
+    },
+    {
+        "id": 163,
+        "image_id": 9,
+        "img_name": "Image_9.png",
+        "categry_id": 2,
+        "category": "can",
+        "bbox": [
+            342,
+            254,
+            383,
+            332
+        ]
+    },
+    {
+        "id": 164,
+        "image_id": 9,
+        "img_name": "Image_9.png",
+        "categry_id": 2,
+        "category": "can",
+        "bbox": [
+            331,
+            289,
+            386,
+            380
+        ]
+    },
+    {
+        "id": 165,
+        "image_id": 9,
+        "img_name": "Image_9.png",
+        "categry_id": 2,
+        "category": "can",
+        "bbox": [
+            410,
+            293,
+            452,
+            360
+        ]
+    },
+    {
+        "id": 166,
+        "image_id": 9,
+        "img_name": "Image_9.png",
+        "categry_id": 2,
+        "category": "can",
+        "bbox": [
+            231,
+            270,
+            273,
+            339
+        ]
+    },
+    {
+        "id": 167,
+        "image_id": 9,
+        "img_name": "Image_9.png",
+        "categry_id": 2,
+        "category": "can",
+        "bbox": [
+            348,
+            279,
+            397,
+            382
+        ]
+    },
+    {
+        "id": 168,
+        "image_id": 9,
+        "img_name": "Image_9.png",
+        "categry_id": 2,
+        "category": "can",
+        "bbox": [
+            198,
+            230,
+            249,
             336
         ]
     },
     {
-        "id": 131,
+        "id": 169,
         "image_id": 9,
         "img_name": "Image_9.png",
         "categry_id": 2,
-        "category": "./assets/bottle/pepsi_1L/pepsi_1L/pepsi_LARGE.obj",
+        "category": "can",
         "bbox": [
-            346,
-            0,
-            507,
-            452
-        ]
-    },
-    {
-        "id": 132,
-        "image_id": 9,
-        "img_name": "Image_9.png",
-        "categry_id": 2,
-        "category": "./assets/bottle/waterbottle_large/waterbottle_large.obj",
-        "bbox": [
-            469,
-            0,
-            608,
-            323
-        ]
-    },
-    {
-        "id": 133,
-        "image_id": 9,
-        "img_name": "Image_9.png",
-        "categry_id": 2,
-        "category": "./assets/bottle/waterbottle_large/waterbottle_large.obj",
-        "bbox": [
-            240,
-            0,
-            396,
-            341
-        ]
-    },
-    {
-        "id": 134,
-        "image_id": 9,
-        "img_name": "Image_9.png",
-        "categry_id": 2,
-        "category": "./assets/can/aluminium_can/alum_can.obj",
-        "bbox": [
-            452,
-            121,
-            530,
-            302
-        ]
-    },
-    {
-        "id": 135,
-        "image_id": 9,
-        "img_name": "Image_9.png",
-        "categry_id": 2,
-        "category": "./assets/can/beer/beer_golden.obj",
-        "bbox": [
-            561,
-            169,
-            639,
-            365
-        ]
-    },
-    {
-        "id": 136,
-        "image_id": 9,
-        "img_name": "Image_9.png",
-        "categry_id": 2,
-        "category": "./assets/can/coca_cola/coca_cola_can.obj",
-        "bbox": [
-            0,
-            358,
-            122,
-            631
-        ]
-    },
-    {
-        "id": 137,
-        "image_id": 9,
-        "img_name": "Image_9.png",
-        "categry_id": 2,
-        "category": "./assets/can/monster_can/monster_can/monster_can.obj",
-        "bbox": [
-            148,
-            138,
-            224,
-            298
-        ]
-    },
-    {
-        "id": 138,
-        "image_id": 9,
-        "img_name": "Image_9.png",
-        "categry_id": 2,
-        "category": "./assets/can/monster_can/monster_can/monster_can.obj",
-        "bbox": [
-            0,
-            184,
-            65,
-            386
+            146,
+            222,
+            196,
+            327
         ]
     }
 ]

@@ -75,7 +75,7 @@ if __name__ == "__main__":
     img_count = 0
     ann_full = {"info" : 
         {"description" : "Bottle and Can detection" ,
-         "date_time" : str(datetime.now())},
+         "date_time" : datetime.now().strftime("%Y-%m-%d %H:%M:%S")},
         "categories" : [
             {
                 "id" : 1,
@@ -117,10 +117,10 @@ if __name__ == "__main__":
                     bottle.scale = bottle.scale * .1
                     jitter_position_xy(bottle)
                     bbox,center_of_volume = calculate_2d_bounding_box(bottle,cam)
-                    ann_temp.append({"class" :obj , "bbox" : bbox , "center_of_volume" : center_of_volume})
+                    ann_temp.append({"class" :category , "bbox" : bbox , "center_of_volume" : center_of_volume})
                     
         render_image("train_images/"+image_savepath)
-        images.append({"id":img_count,"width":image_size[0],"height":image_size[1],"filename":image_savepath,"date_saved":datetime.now()})
+        images.append({"id":img_count,"width":image_size[0],"height":image_size[1],"filename":image_savepath,"date_saved":datetime.now().strftime("%Y-%m-%d %H:%M:%S")})
         annotations_clean,ann_count = remove_occluded_annotations(ann_temp,ann_count,img_count,image_savepath,image_size)
         ann_image+=annotations_clean 
         with open(annotations_savepath, "w") as json_file:
@@ -129,6 +129,7 @@ if __name__ == "__main__":
         remove_light_source(light_name = f"light{img_count}")
         # remove_camera(cam.name)
         img_count+=1
+
     ann_full["images"] = images
     ann_full["annotations"] = ann_image
     

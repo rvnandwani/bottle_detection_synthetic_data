@@ -415,6 +415,7 @@ def remove_occluded_annotations(annotations,ann_count,img_id,image_name,image_si
     for idx, ann in enumerate(annotations):
         ann["bbox"] = check_rectangle_position(ann["bbox"],(0,0,image_size[0]-1,image_size[1]-1))
         if idx not in indices_to_remove and ann["bbox"]:
+            
             obj_id = 1 if ann["class"]=="bottle" else 2
             ann_ret.append({"id":ann_count,"image_id":img_id,"img_name":image_name,"categry_id":obj_id,"category":ann["class"],"bbox":ann["bbox"]})
             ann_count+=1

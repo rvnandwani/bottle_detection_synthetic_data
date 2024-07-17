@@ -1,197 +1,210 @@
 [
     {
-        "id": 264,
+        "id": 285,
         "image_id": 18,
         "img_name": "Image_18.png",
-        "categry_id": 2,
-        "category": "./assets/bottle/evian/waterbottle_6.obj",
+        "categry_id": 1,
+        "category": "bottle",
         "bbox": [
-            386,
-            227,
-            421,
-            337
+            429,
+            212,
+            469,
+            320
         ]
     },
     {
-        "id": 265,
+        "id": 286,
         "image_id": 18,
         "img_name": "Image_18.png",
-        "categry_id": 2,
-        "category": "./assets/bottle/evian/waterbottle_6.obj",
+        "categry_id": 1,
+        "category": "bottle",
         "bbox": [
-            354,
-            225,
-            400,
-            372
+            460,
+            196,
+            513,
+            336
         ]
     },
     {
-        "id": 266,
+        "id": 287,
         "image_id": 18,
         "img_name": "Image_18.png",
-        "categry_id": 2,
-        "category": "./assets/bottle/koicha/koicha.obj",
+        "categry_id": 1,
+        "category": "bottle",
         "bbox": [
-            427,
-            213,
-            479,
-            370
-        ]
-    },
-    {
-        "id": 267,
-        "image_id": 18,
-        "img_name": "Image_18.png",
-        "categry_id": 2,
-        "category": "./assets/bottle/nihon_no_koohii/nihon_no_koohii.obj",
-        "bbox": [
-            383,
-            265,
-            435,
-            371
-        ]
-    },
-    {
-        "id": 268,
-        "image_id": 18,
-        "img_name": "Image_18.png",
-        "categry_id": 2,
-        "category": "./assets/bottle/nihon_no_koohii/nihon_no_koohii.obj",
-        "bbox": [
-            365,
-            258,
-            406,
-            342
-        ]
-    },
-    {
-        "id": 269,
-        "image_id": 18,
-        "img_name": "Image_18.png",
-        "categry_id": 2,
-        "category": "./assets/bottle/pepsi_1L/pepsi_1L/pepsi_LARGE.obj",
-        "bbox": [
-            93,
-            165,
-            148,
-            348
-        ]
-    },
-    {
-        "id": 270,
-        "image_id": 18,
-        "img_name": "Image_18.png",
-        "categry_id": 2,
-        "category": "./assets/bottle/pepsi_1L/pepsi_1L/pepsi_LARGE.obj",
-        "bbox": [
-            260,
-            157,
-            327,
+            274,
+            224,
+            336,
             382
         ]
     },
     {
-        "id": 271,
+        "id": 288,
         "image_id": 18,
         "img_name": "Image_18.png",
-        "categry_id": 2,
-        "category": "./assets/bottle/waterbottle_large/waterbottle_large.obj",
+        "categry_id": 1,
+        "category": "bottle",
         "bbox": [
-            225,
+            248,
+            187,
+            317,
+            379
+        ]
+    },
+    {
+        "id": 289,
+        "image_id": 18,
+        "img_name": "Image_18.png",
+        "categry_id": 1,
+        "category": "bottle",
+        "bbox": [
+            367,
             175,
-            290,
-            346
+            424,
+            337
         ]
     },
     {
-        "id": 272,
+        "id": 290,
         "image_id": 18,
         "img_name": "Image_18.png",
-        "categry_id": 2,
-        "category": "./assets/bottle/waterbottle_large/waterbottle_large.obj",
+        "categry_id": 1,
+        "category": "bottle",
         "bbox": [
-            479,
-            183,
-            546,
-            353
+            285,
+            189,
+            356,
+            342
         ]
     },
     {
-        "id": 273,
+        "id": 291,
         "image_id": 18,
         "img_name": "Image_18.png",
-        "categry_id": 2,
-        "category": "./assets/can/beer/beer_golden.obj",
+        "categry_id": 1,
+        "category": "bottle",
         "bbox": [
-            306,
-            268,
-            344,
-            339
+            162,
+            205,
+            241,
+            370
         ]
     },
     {
-        "id": 274,
+        "id": 292,
         "image_id": 18,
         "img_name": "Image_18.png",
         "categry_id": 2,
-        "category": "./assets/can/coca_cola/coca_cola_can.obj",
+        "category": "can",
         "bbox": [
-            179,
-            283,
-            221,
-            360
-        ]
-    },
-    {
-        "id": 275,
-        "image_id": 18,
-        "img_name": "Image_18.png",
-        "categry_id": 2,
-        "category": "./assets/can/coca_cola/coca_cola_can.obj",
-        "bbox": [
-            407,
-            280,
-            443,
-            343
-        ]
-    },
-    {
-        "id": 276,
-        "image_id": 18,
-        "img_name": "Image_18.png",
-        "categry_id": 2,
-        "category": "./assets/can/monster_can/monster_can/monster_can.obj",
-        "bbox": [
-            457,
-            266,
-            496,
-            359
-        ]
-    },
-    {
-        "id": 277,
-        "image_id": 18,
-        "img_name": "Image_18.png",
-        "categry_id": 2,
-        "category": "./assets/can/monster_can/monster_can/monster_can.obj",
-        "bbox": [
-            365,
-            269,
-            409,
-            380
-        ]
-    },
-    {
-        "id": 278,
-        "image_id": 18,
-        "img_name": "Image_18.png",
-        "categry_id": 2,
-        "category": "./assets/can/ocha_can_500ml/ocha_can_500ml.obj",
-        "bbox": [
-            340,
-            247,
+            341,
+            263,
             389,
-            366
+            357
+        ]
+    },
+    {
+        "id": 293,
+        "image_id": 18,
+        "img_name": "Image_18.png",
+        "categry_id": 2,
+        "category": "can",
+        "bbox": [
+            382,
+            259,
+            432,
+            356
+        ]
+    },
+    {
+        "id": 294,
+        "image_id": 18,
+        "img_name": "Image_18.png",
+        "categry_id": 2,
+        "category": "can",
+        "bbox": [
+            439,
+            251,
+            481,
+            320
+        ]
+    },
+    {
+        "id": 295,
+        "image_id": 18,
+        "img_name": "Image_18.png",
+        "categry_id": 2,
+        "category": "can",
+        "bbox": [
+            242,
+            286,
+            289,
+            364
+        ]
+    },
+    {
+        "id": 296,
+        "image_id": 18,
+        "img_name": "Image_18.png",
+        "categry_id": 2,
+        "category": "can",
+        "bbox": [
+            206,
+            294,
+            245,
+            355
+        ]
+    },
+    {
+        "id": 297,
+        "image_id": 18,
+        "img_name": "Image_18.png",
+        "categry_id": 2,
+        "category": "can",
+        "bbox": [
+            398,
+            249,
+            436,
+            331
+        ]
+    },
+    {
+        "id": 298,
+        "image_id": 18,
+        "img_name": "Image_18.png",
+        "categry_id": 2,
+        "category": "can",
+        "bbox": [
+            475,
+            239,
+            514,
+            324
+        ]
+    },
+    {
+        "id": 299,
+        "image_id": 18,
+        "img_name": "Image_18.png",
+        "categry_id": 2,
+        "category": "can",
+        "bbox": [
+            450,
+            225,
+            495,
+            319
+        ]
+    },
+    {
+        "id": 300,
+        "image_id": 18,
+        "img_name": "Image_18.png",
+        "categry_id": 2,
+        "category": "can",
+        "bbox": [
+            401,
+            236,
+            451,
+            341
         ]
     }
 ]
