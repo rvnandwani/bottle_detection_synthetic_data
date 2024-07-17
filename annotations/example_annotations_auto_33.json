@@ -1,0 +1,184 @@
+[
+    {
+        "id": 491,
+        "image_id": 33,
+        "img_name": "Image_33.png",
+        "categry_id": 2,
+        "category": "./assets/bottle/evian/waterbottle_6.obj",
+        "bbox": [
+            389,
+            194,
+            430,
+            320
+        ]
+    },
+    {
+        "id": 492,
+        "image_id": 33,
+        "img_name": "Image_33.png",
+        "categry_id": 2,
+        "category": "./assets/bottle/evian/waterbottle_6.obj",
+        "bbox": [
+            403,
+            194,
+            458,
+            363
+        ]
+    },
+    {
+        "id": 493,
+        "image_id": 33,
+        "img_name": "Image_33.png",
+        "categry_id": 2,
+        "category": "./assets/bottle/koicha/koicha.obj",
+        "bbox": [
+            418,
+            177,
+            469,
+            330
+        ]
+    },
+    {
+        "id": 494,
+        "image_id": 33,
+        "img_name": "Image_33.png",
+        "categry_id": 2,
+        "category": "./assets/bottle/nihon_no_koohii/nihon_no_koohii.obj",
+        "bbox": [
+            171,
+            249,
+            226,
+            356
+        ]
+    },
+    {
+        "id": 495,
+        "image_id": 33,
+        "img_name": "Image_33.png",
+        "categry_id": 2,
+        "category": "./assets/bottle/pepsi_1L/pepsi_1L/pepsi_LARGE.obj",
+        "bbox": [
+            140,
+            138,
+            224,
+            395
+        ]
+    },
+    {
+        "id": 496,
+        "image_id": 33,
+        "img_name": "Image_33.png",
+        "categry_id": 2,
+        "category": "./assets/bottle/waterbottle_large/waterbottle_large.obj",
+        "bbox": [
+            294,
+            130,
+            397,
+            382
+        ]
+    },
+    {
+        "id": 497,
+        "image_id": 33,
+        "img_name": "Image_33.png",
+        "categry_id": 2,
+        "category": "./assets/bottle/waterbottle_large/waterbottle_large.obj",
+        "bbox": [
+            289,
+            153,
+            360,
+            325
+        ]
+    },
+    {
+        "id": 498,
+        "image_id": 33,
+        "img_name": "Image_33.png",
+        "categry_id": 2,
+        "category": "./assets/can/aluminium_can/alum_can.obj",
+        "bbox": [
+            265,
+            260,
+            334,
+            407
+        ]
+    },
+    {
+        "id": 499,
+        "image_id": 33,
+        "img_name": "Image_33.png",
+        "categry_id": 2,
+        "category": "./assets/can/aluminium_can/alum_can.obj",
+        "bbox": [
+            541,
+            231,
+            597,
+            354
+        ]
+    },
+    {
+        "id": 500,
+        "image_id": 33,
+        "img_name": "Image_33.png",
+        "categry_id": 2,
+        "category": "./assets/can/beer/beer_golden.obj",
+        "bbox": [
+            351,
+            264,
+            414,
+            377
+        ]
+    },
+    {
+        "id": 501,
+        "image_id": 33,
+        "img_name": "Image_33.png",
+        "categry_id": 2,
+        "category": "./assets/can/coca_cola/coca_cola_can.obj",
+        "bbox": [
+            207,
+            284,
+            263,
+            379
+        ]
+    },
+    {
+        "id": 502,
+        "image_id": 33,
+        "img_name": "Image_33.png",
+        "categry_id": 2,
+        "category": "./assets/can/monster_can/monster_can/monster_can.obj",
+        "bbox": [
+            205,
+            255,
+            257,
+            373
+        ]
+    },
+    {
+        "id": 503,
+        "image_id": 33,
+        "img_name": "Image_33.png",
+        "categry_id": 2,
+        "category": "./assets/can/ocha_can_500ml/ocha_can_500ml.obj",
+        "bbox": [
+            115,
+            237,
+            172,
+            360
+        ]
+    },
+    {
+        "id": 504,
+        "image_id": 33,
+        "img_name": "Image_33.png",
+        "categry_id": 2,
+        "category": "./assets/can/ocha_can_500ml/ocha_can_500ml.obj",
+        "bbox": [
+            225,
+            232,
+            288,
+            374
+        ]
+    }
+]

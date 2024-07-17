@@ -1,0 +1,184 @@
+[
+    {
+        "id": 344,
+        "image_id": 23,
+        "img_name": "Image_23.png",
+        "categry_id": 2,
+        "category": "./assets/bottle/evian/waterbottle_6.obj",
+        "bbox": [
+            118,
+            228,
+            164,
+            362
+        ]
+    },
+    {
+        "id": 345,
+        "image_id": 23,
+        "img_name": "Image_23.png",
+        "categry_id": 2,
+        "category": "./assets/bottle/evian/waterbottle_6.obj",
+        "bbox": [
+            162,
+            227,
+            206,
+            358
+        ]
+    },
+    {
+        "id": 346,
+        "image_id": 23,
+        "img_name": "Image_23.png",
+        "categry_id": 2,
+        "category": "./assets/bottle/koicha/koicha.obj",
+        "bbox": [
+            356,
+            203,
+            403,
+            344
+        ]
+    },
+    {
+        "id": 347,
+        "image_id": 23,
+        "img_name": "Image_23.png",
+        "categry_id": 2,
+        "category": "./assets/bottle/koicha/koicha.obj",
+        "bbox": [
+            415,
+            202,
+            459,
+            336
+        ]
+    },
+    {
+        "id": 348,
+        "image_id": 23,
+        "img_name": "Image_23.png",
+        "categry_id": 2,
+        "category": "./assets/bottle/nihon_no_koohii/nihon_no_koohii.obj",
+        "bbox": [
+            238,
+            258,
+            284,
+            348
+        ]
+    },
+    {
+        "id": 349,
+        "image_id": 23,
+        "img_name": "Image_23.png",
+        "categry_id": 2,
+        "category": "./assets/bottle/pepsi_1L/pepsi_1L/pepsi_LARGE.obj",
+        "bbox": [
+            205,
+            160,
+            270,
+            364
+        ]
+    },
+    {
+        "id": 350,
+        "image_id": 23,
+        "img_name": "Image_23.png",
+        "categry_id": 2,
+        "category": "./assets/bottle/pepsi_1L/pepsi_1L/pepsi_LARGE.obj",
+        "bbox": [
+            346,
+            166,
+            402,
+            344
+        ]
+    },
+    {
+        "id": 351,
+        "image_id": 23,
+        "img_name": "Image_23.png",
+        "categry_id": 2,
+        "category": "./assets/bottle/waterbottle_large/waterbottle_large.obj",
+        "bbox": [
+            261,
+            147,
+            351,
+            370
+        ]
+    },
+    {
+        "id": 352,
+        "image_id": 23,
+        "img_name": "Image_23.png",
+        "categry_id": 2,
+        "category": "./assets/can/aluminium_can/alum_can.obj",
+        "bbox": [
+            154,
+            264,
+            199,
+            359
+        ]
+    },
+    {
+        "id": 353,
+        "image_id": 23,
+        "img_name": "Image_23.png",
+        "categry_id": 2,
+        "category": "./assets/can/aluminium_can/alum_can.obj",
+        "bbox": [
+            313,
+            253,
+            365,
+            365
+        ]
+    },
+    {
+        "id": 354,
+        "image_id": 23,
+        "img_name": "Image_23.png",
+        "categry_id": 2,
+        "category": "./assets/can/coca_cola/coca_cola_can.obj",
+        "bbox": [
+            240,
+            283,
+            287,
+            365
+        ]
+    },
+    {
+        "id": 355,
+        "image_id": 23,
+        "img_name": "Image_23.png",
+        "categry_id": 2,
+        "category": "./assets/can/monster_can/monster_can/monster_can.obj",
+        "bbox": [
+            109,
+            267,
+            150,
+            362
+        ]
+    },
+    {
+        "id": 356,
+        "image_id": 23,
+        "img_name": "Image_23.png",
+        "categry_id": 2,
+        "category": "./assets/can/ocha_can_500ml/ocha_can_500ml.obj",
+        "bbox": [
+            365,
+            237,
+            410,
+            341
+        ]
+    },
+    {
+        "id": 357,
+        "image_id": 23,
+        "img_name": "Image_23.png",
+        "categry_id": 2,
+        "category": "./assets/can/ocha_can_500ml/ocha_can_500ml.obj",
+        "bbox": [
+            94,
+            252,
+            143,
+            361
+        ]
+    }
+]

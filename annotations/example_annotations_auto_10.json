@@ -1,0 +1,210 @@
+[
+    {
+        "id": 139,
+        "image_id": 10,
+        "img_name": "Image_10.png",
+        "categry_id": 2,
+        "category": "./assets/bottle/evian/waterbottle_6.obj",
+        "bbox": [
+            344,
+            215,
+            397,
+            350
+        ]
+    },
+    {
+        "id": 140,
+        "image_id": 10,
+        "img_name": "Image_10.png",
+        "categry_id": 2,
+        "category": "./assets/bottle/evian/waterbottle_6.obj",
+        "bbox": [
+            167,
+            162,
+            244,
+            359
+        ]
+    },
+    {
+        "id": 141,
+        "image_id": 10,
+        "img_name": "Image_10.png",
+        "categry_id": 2,
+        "category": "./assets/bottle/koicha/koicha.obj",
+        "bbox": [
+            306,
+            166,
+            392,
+            381
+        ]
+    },
+    {
+        "id": 142,
+        "image_id": 10,
+        "img_name": "Image_10.png",
+        "categry_id": 2,
+        "category": "./assets/bottle/koicha/koicha.obj",
+        "bbox": [
+            224,
+            148,
+            314,
+            373
+        ]
+    },
+    {
+        "id": 143,
+        "image_id": 10,
+        "img_name": "Image_10.png",
+        "categry_id": 2,
+        "category": "./assets/bottle/pepsi_1L/pepsi_1L/pepsi_LARGE.obj",
+        "bbox": [
+            0,
+            64,
+            63,
+            320
+        ]
+    },
+    {
+        "id": 144,
+        "image_id": 10,
+        "img_name": "Image_10.png",
+        "categry_id": 2,
+        "category": "./assets/bottle/pepsi_1L/pepsi_1L/pepsi_LARGE.obj",
+        "bbox": [
+            296,
+            129,
+            381,
+            364
+        ]
+    },
+    {
+        "id": 145,
+        "image_id": 10,
+        "img_name": "Image_10.png",
+        "categry_id": 2,
+        "category": "./assets/bottle/waterbottle_large/waterbottle_large.obj",
+        "bbox": [
+            0,
+            74,
+            102,
+            323
+        ]
+    },
+    {
+        "id": 146,
+        "image_id": 10,
+        "img_name": "Image_10.png",
+        "categry_id": 2,
+        "category": "./assets/can/aluminium_can/alum_can.obj",
+        "bbox": [
+            251,
+            229,
+            330,
+            377
+        ]
+    },
+    {
+        "id": 147,
+        "image_id": 10,
+        "img_name": "Image_10.png",
+        "categry_id": 2,
+        "category": "./assets/can/aluminium_can/alum_can.obj",
+        "bbox": [
+            439,
+            264,
+            503,
+            382
+        ]
+    },
+    {
+        "id": 148,
+        "image_id": 10,
+        "img_name": "Image_10.png",
+        "categry_id": 2,
+        "category": "./assets/can/beer/beer_golden.obj",
+        "bbox": [
+            523,
+            294,
+            592,
+            400
+        ]
+    },
+    {
+        "id": 149,
+        "image_id": 10,
+        "img_name": "Image_10.png",
+        "categry_id": 2,
+        "category": "./assets/can/beer/beer_golden.obj",
+        "bbox": [
+            350,
+            265,
+            441,
+            410
+        ]
+    },
+    {
+        "id": 150,
+        "image_id": 10,
+        "img_name": "Image_10.png",
+        "categry_id": 2,
+        "category": "./assets/can/coca_cola/coca_cola_can.obj",
+        "bbox": [
+            218,
+            256,
+            278,
+            350
+        ]
+    },
+    {
+        "id": 151,
+        "image_id": 10,
+        "img_name": "Image_10.png",
+        "categry_id": 2,
+        "category": "./assets/can/monster_can/monster_can/monster_can.obj",
+        "bbox": [
+            477,
+            267,
+            548,
+            406
+        ]
+    },
+    {
+        "id": 152,
+        "image_id": 10,
+        "img_name": "Image_10.png",
+        "categry_id": 2,
+        "category": "./assets/can/monster_can/monster_can/monster_can.obj",
+        "bbox": [
+            500,
+            276,
+            554,
+            382
+        ]
+    },
+    {
+        "id": 153,
+        "image_id": 10,
+        "img_name": "Image_10.png",
+        "categry_id": 2,
+        "category": "./assets/can/ocha_can_500ml/ocha_can_500ml.obj",
+        "bbox": [
+            343,
+            232,
+            408,
+            361
+        ]
+    },
+    {
+        "id": 154,
+        "image_id": 10,
+        "img_name": "Image_10.png",
+        "categry_id": 2,
+        "category": "./assets/can/ocha_can_500ml/ocha_can_500ml.obj",
+        "bbox": [
+            19,
+            171,
+            97,
+            327
+        ]
+    }
+]

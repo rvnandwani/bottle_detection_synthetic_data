@@ -8,13 +8,178 @@ import json
 
 sys.path.append("./")
 
+# def clean_enviroment():
+#     """
+#         removes all objects from current scene except default camera
+#     """
+#     for obj in bpy.context.scene.objects:
+#         # if obj.name != "Camera":
+#         bpy.data.objects.remove(obj)
+
 def clean_enviroment():
-    """
-        removes all objects from current scene except default camera
-    """
-    for obj in bpy.context.scene.objects:
-        if obj.name != "Camera":
-            bpy.data.objects.remove(obj)
+    # Deselect all objects
+    bpy.ops.object.select_all(action='DESELECT')
+    
+    # Select all objects
+    bpy.ops.object.select_all(action='SELECT')
+    
+    # Delete all selected objects
+    bpy.ops.object.delete()
+    
+    # Remove all meshes
+    bpy.ops.outliner.orphans_purge(do_recursive=True)
+
+    # Remove all materials
+    for material in bpy.data.materials:
+        bpy.data.materials.remove(material)
+        
+    # Remove all textures
+    for texture in bpy.data.textures:
+        bpy.data.textures.remove(texture)
+        
+    # Remove all images
+    for image in bpy.data.images:
+        bpy.data.images.remove(image)
+        
+    # Remove all cameras
+    for camera in bpy.data.cameras:
+        bpy.data.cameras.remove(camera)
+        
+    # Remove all lights
+    for light in bpy.data.lights:
+        bpy.data.lights.remove(light)
+        
+    # Remove all meshes
+    for mesh in bpy.data.meshes:
+        bpy.data.meshes.remove(mesh)
+        
+    # Remove all curves
+    for curve in bpy.data.curves:
+        bpy.data.curves.remove(curve)
+        
+    # Remove all metaballs
+    for metaball in bpy.data.metaballs:
+        bpy.data.metaballs.remove(metaball)
+        
+    # Remove all fonts
+    for font in bpy.data.fonts:
+        bpy.data.fonts.remove(font)
+        
+    # Remove all armatures
+    for armature in bpy.data.armatures:
+        bpy.data.armatures.remove(armature)
+        
+    # Remove all actions
+    for action in bpy.data.actions:
+        bpy.data.actions.remove(action)
+        
+    # Remove all node groups
+    for node_group in bpy.data.node_groups:
+        bpy.data.node_groups.remove(node_group)
+        
+    # Remove all collections
+    for collection in bpy.data.collections:
+        bpy.data.collections.remove(collection)
+        
+    # Remove all particles
+    for particle in bpy.data.particles:
+        bpy.data.particles.remove(particle)
+        
+    # Remove all speakers
+    for speaker in bpy.data.speakers:
+        bpy.data.speakers.remove(speaker)
+        
+    # Remove all sounds
+    for sound in bpy.data.sounds:
+        bpy.data.sounds.remove(sound)
+        
+    # Remove all grease pencils
+    for grease_pencil in bpy.data.grease_pencils:
+        bpy.data.grease_pencils.remove(grease_pencil)
+        
+    # Remove all lattice
+    for lattice in bpy.data.lattices:
+        bpy.data.lattices.remove(lattice)
+
+    # Remove all armatures
+    for armature in bpy.data.armatures:
+        bpy.data.armatures.remove(armature)
+        
+    # Remove all node groups
+    for node_group in bpy.data.node_groups:
+        bpy.data.node_groups.remove(node_group)
+        
+    # Remove all objects
+    for obj in bpy.data.objects:
+        bpy.data.objects.remove(obj)
+        
+    # Remove all brushes
+    for brush in bpy.data.brushes:
+        bpy.data.brushes.remove(brush)
+        
+    # Remove all palettes
+    for palette in bpy.data.palettes:
+        bpy.data.palettes.remove(palette)
+        
+    # Remove all lights
+    for light in bpy.data.lights:
+        bpy.data.lights.remove(light)
+        
+    # Remove all worlds
+    # for world in bpy.data.worlds:
+    #     bpy.data.worlds.remove(world)
+        
+    # Remove all cache files
+    for cache_file in bpy.data.cache_files:
+        bpy.data.cache_files.remove(cache_file)
+        
+    # Remove all libraries
+    for library in bpy.data.libraries:
+        bpy.data.libraries.remove(library)
+        
+    # Remove all images
+    for image in bpy.data.images:
+        bpy.data.images.remove(image)
+        
+    # Remove all keying sets
+    # for keying_set in bpy.data.keying_sets:
+    #     bpy.data.keying_sets.remove(keying_set)
+        
+    # Remove all line styles
+    for line_style in bpy.data.linestyles:
+        bpy.data.linestyles.remove(line_style)
+        
+    # Remove all mask
+    for mask in bpy.data.masks:
+        bpy.data.masks.remove(mask)
+        
+    # Remove all paint curves
+    for paint_curve in bpy.data.paint_curves:
+        bpy.data.paint_curves.remove(paint_curve)
+        
+    # Remove all point clouds
+    for point_cloud in bpy.data.pointclouds:
+        bpy.data.pointclouds.remove(point_cloud)
+        
+    # Remove all simulations
+    # for simulation in bpy.data.simulations:
+    #     bpy.data.simulations.remove(simulation)
+        
+    # Remove all text blocks
+    for text in bpy.data.texts:
+        bpy.data.texts.remove(text)
+        
+    # Remove all hair curves
+    for hair_curve in bpy.data.hair_curves:
+        bpy.data.hair_curves.remove(hair_curve)
+        
+    # Remove all curves
+    for curve in bpy.data.curves:
+        bpy.data.curves.remove(curve)
+        
+    # Remove all lattices
+    for lattice in bpy.data.lattices:
+        bpy.data.lattices.remove(lattice)
 
 def set_resolution(image_size):
     """
@@ -28,8 +193,9 @@ def jitter_position_xy(obj, x_range=(-.3, .3), y_range=(-.3, .3)):
     """
         jitter given objects position in x & y axes
     """
-    bottle.location.x = np.random.uniform(x_range[0], x_range[1])
-    bottle.location.y = np.random.uniform(y_range[0], y_range[1])
+    obj.location.x = np.random.uniform(x_range[0], x_range[1])
+    obj.location.y = np.random.uniform(y_range[0], y_range[1])
+    obj.location.z = 0.0
 
 def render_image(filepath="example_image.png"):
     """
@@ -39,27 +205,41 @@ def render_image(filepath="example_image.png"):
     bpy.context.scene.render.filepath = filepath
     bpy.ops.render.render(write_still=True)
 
-def add_light_source(x_range=(-3, 3), y_range=(-3, 3), z_range=(1, 3), strength_range=(1., 1.5)):
+def add_light_source(light_name , x_range=(-3, 3), y_range=(-3, 3), z_range=(1, 3), strength_range=(0.5, 15)):
     """
         makes a 'SUN' type light source to the scene and jitter its position
     """
 
-    light_data = bpy.data.lights.new(name="light", type="SUN")
-    light_data.energy = np.random.uniform(strength_range[0], strength_range[1])
+    light_data = bpy.data.lights.new(name=light_name, type="SUN")
+    # light_data.energy = np.random.uniform(strength_range[0], strength_range[1])
+    light_data.energy = 0.5
     light_source = bpy.data.objects.new(name="light", object_data=light_data)
     bpy.context.collection.objects.link(light_source)
     light_source.location.x = np.random.uniform(x_range[0], x_range[1])
     light_source.location.y = np.random.uniform(y_range[0], y_range[1])
     light_source.location.z = np.random.uniform(z_range[0], z_range[1])
 
-def setup_new_camera(location=(0.,1.2,.9), rotation_euler=(np.deg2rad(-130), np.deg2rad(180), 0)):
+# def setup_new_camera(location=(0.,1.2,0.9), rotation_euler=(np.deg2rad(-130), np.deg2rad(180), np.deg2rad(0))):
+def setup_new_camera(img_id,location=(-1.2523229420976516,-0.42750112949390956,0.2375570138718806), rotation_euler=(np.deg2rad(81.933), np.deg2rad(-8.241), np.deg2rad(-71.152))):
     """
         creates camera object sets pose with given args
     """
-    cam = bpy.context.scene.camera
+    cam = bpy.data.cameras.new(name = f"Camera_{img_id}")
+    cam = bpy.data.objects.new("Camera_{img_id}_object",object_data = cam)
+    # cam = bpy.context.scene.camera
+    bpy.context.collection.objects.link(cam)
     cam.location = location
     cam.rotation_euler = rotation_euler
+    bpy.context.scene.camera = cam
     return cam
+
+def remove_camera(camera_object_name):
+    camera_object = bpy.data.objects.get("Camera_1_object")
+    if camera_object:
+        bpy.context.collection.objects.unlink(camera_object)
+        bpy.context.view_layer.update()
+        bpy.data.cameras.remove(camera_object.data)
+        bpy.data.objects.remove(camera_object)
 
 def add_ground_plane(hide=False):
     """
@@ -181,10 +361,45 @@ def check_occlusion(ann1, ann2, overlap_thre=0.7):
 
     return is_occluded
 
-def remove_occluded_annotations(annotations):
+def remove_light_source(light_name):
+    light_object = bpy.data.objects.get(light_name)
+
+    if light_object:
+        bpy.context.collection.objects.unlink(light_object)
+        bpy.data.lights.remove(light_object.data)
+        bpy.data.objects.remove(light_object)
+
+def check_rectangle_position(in_rect, out_rect):
+    x1, y1, x2, y2 = in_rect[0],in_rect[1],in_rect[2],in_rect[3]
+    X1, Y1, X2, Y2 = out_rect[0],out_rect[1],out_rect[2],out_rect[3]
+
+    def is_point_inside(px, py):
+        return X1 <= px <= X2 and Y1 <= py <= Y2
+
+    corners_inside = [
+        is_point_inside(x1, y1),
+        is_point_inside(x1, y2),
+        is_point_inside(x2, y1),
+        is_point_inside(x2, y2)
+    ]
+    if all(corners_inside):
+        return in_rect
+    elif any(corners_inside):
+        if x1<X1:
+            x1=X1
+        if y1<Y1:
+            y1=Y1
+        if x2>X2:
+            x2=X2
+        if y2>Y2:
+            y2=Y2
+        return [x1,y1,x2,y2]
+    else:
+        return None
+    
+def remove_occluded_annotations(annotations,ann_count,img_id,image_name,image_size):
     """
         A simple method to remove occluded object annotations using IoU and drink distance in z-axis w.r.t to camera
-        NOTE: Does not consider if object is inside image plane or not
     """
     indices_to_remove = []
     # loop through all the annotations
@@ -196,29 +411,37 @@ def remove_occluded_annotations(annotations):
             # add to removal list if occluded
             if occluded:
                 indices_to_remove.append(a1_idx)
-
+    ann_ret = []
+    for idx, ann in enumerate(annotations):
+        ann["bbox"] = check_rectangle_position(ann["bbox"],(0,0,image_size[0]-1,image_size[1]-1))
+        if idx not in indices_to_remove and ann["bbox"]:
+            obj_id = 1 if ann["class"]=="bottle" else 2
+            ann_ret.append({"id":ann_count,"image_id":img_id,"img_name":image_name,"categry_id":obj_id,"category":ann["class"],"bbox":ann["bbox"]})
+            ann_count+=1
+    return ann_ret,ann_count
+    
     # returns new list without found occluded objects
-    return [{"class": ann["class"], "bbox": ann["bbox"]} for idx, ann in enumerate(annotations) if idx not in indices_to_remove]
+    # return [{"class": ann["class"], "bbox": ann["bbox"]} for idx, ann in enumerate(annotations) if idx not in indices_to_remove]
 
 if __name__ == "__main__":
 
     assets_dir = "./assets"
     save_blend = True
-    add_ground = True
+    add_ground = False
     save_viz = False # NOTE: requires opencv-python. Setting arg to 'True' will make script to install opencv-python automatically
     image_savepath = "example_image.png"
     annotations_savepath = "example_annotations.json"
     annotations = []
 
     # get 3d model paths
-    bottles_path = sorted(glob.glob(os.path.join(assets_dir, "bottle", "*", "*.obj")))
+    bottles_path = sorted(glob.glob(os.path.join(assets_dir, "bottle",  "**", "*.obj"),recursive=True))
     print(f"found {len(bottles_path)} bottles")
 
     # clean scene
     clean_enviroment()
 
     # load hdri background
-    # add_hdri_background()
+    add_hdri_background("hdris/fireplace_4k.hdr")
 
     # get camera
     cam = setup_new_camera()
@@ -232,7 +455,7 @@ if __name__ == "__main__":
         add_ground_plane(hide=False)
 
     # add "sun" light source
-    add_light_source()
+    add_light_source(light_name = "light1")
 
     # load all found .obj models
     for bottle_path in bottles_path:
