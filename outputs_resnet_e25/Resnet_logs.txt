@@ -1,0 +1,540 @@
+/usr/local/lib/python3.10/dist-packages/albumentations/core/composition.py:156: UserWarning: Got processor for bboxes, but no transform to process it.
+  self._set_keys()
+/usr/local/lib/python3.10/dist-packages/torch/utils/data/dataloader.py:558: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+Number of training samples: 331
+Number of validation samples: 25
+
+Seed Value set to :  15
+Model backbone out_channels =  [512]
+SSD(
+  (backbone): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU(inplace=True)
+    (3): MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False)
+    (4): Sequential(
+      (0): BasicBlock(
+        (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (1): BasicBlock(
+        (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (2): BasicBlock(
+        (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (5): Sequential(
+      (0): BasicBlock(
+        (conv1): Conv2d(64, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (downsample): Sequential(
+          (0): Conv2d(64, 128, kernel_size=(1, 1), stride=(2, 2), bias=False)
+          (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (1): BasicBlock(
+        (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (2): BasicBlock(
+        (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (3): BasicBlock(
+        (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (6): Sequential(
+      (0): BasicBlock(
+        (conv1): Conv2d(128, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (downsample): Sequential(
+          (0): Conv2d(128, 256, kernel_size=(1, 1), stride=(2, 2), bias=False)
+          (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (1): BasicBlock(
+        (conv1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (2): BasicBlock(
+        (conv1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (3): BasicBlock(
+        (conv1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (4): BasicBlock(
+        (conv1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (5): BasicBlock(
+        (conv1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (7): Sequential(
+      (0): BasicBlock(
+        (conv1): Conv2d(256, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (downsample): Sequential(
+          (0): Conv2d(256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False)
+          (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+      )
+      (1): BasicBlock(
+        (conv1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+      (2): BasicBlock(
+        (conv1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+  )
+  (anchor_generator): DefaultBoxGenerator(aspect_ratios=[[2, 3, 4], [2, 3, 4], [2, 3, 4], [2, 3, 4], [2, 3, 4], [2, 3, 4]], clip=True, scales=[0.15, 0.3, 0.44999999999999996, 0.6, 0.75, 0.9, 1.0], steps=None)
+  (head): SSDHead(
+    (classification_head): SSDClassificationHead(
+      (module_list): ModuleList(
+        (0): Conv2d(512, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): Conv2d(1024, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (2): Conv2d(512, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (3-5): 3 x Conv2d(256, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+    )
+    (regression_head): SSDRegressionHead(
+      (module_list): ModuleList(
+        (0): Conv2d(512, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): Conv2d(1024, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (2): Conv2d(512, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (3-5): 3 x Conv2d(256, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+    )
+  )
+  (transform): GeneralizedRCNNTransform(
+      Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+      Resize(min_size=(640,), max_size=640, mode='bilinear')
+  )
+)
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:28: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn("The verbose parameter is deprecated. Please use get_last_lr() "
+Optimizer used is SGD and Parameters set as follows : 
+ Learning Rate : 0.0001
+ Momentum : 0.9
+ Step size : 15
+ Gamma : 0.1
+
+EPOCH 1 of 25
+Training
+Loss: 7.6120: 100% 33/33 [00:47<00:00,  1.45s/it]
+Validating
+100% 2/2 [00:02<00:00,  1.15s/it]
+/usr/local/lib/python3.10/dist-packages/torchmetrics/utilities/prints.py:43: UserWarning: Encountered more than 100 detections in a single image. This means that certain detections with the lowest scores will be ignored, that may have an undesirable impact on performance. Please consider adjusting the `max_detection_threshold` to suit your use case. To disable this warning, set attribute class `warn_on_many_detections=False`, after initializing the metric.
+  warnings.warn(*args, **kwargs)  # noqa: B028
+Epoch 1 train loss: 13.540569565512918
+Epoch 1 mAP: 0.021808113902807236
+ 0.856 minutes taken to complete epoch 0
+
+Validation mAP: 0.021808113902807236
+
+Best model saved for: 1
+
+SAVING PLOTS COMPLETE...
+
+EPOCH 2 of 25
+Training
+  0% 0/33 [00:00<?, ?it/s]/usr/local/lib/python3.10/dist-packages/torch/utils/data/dataloader.py:558: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+Loss: 5.9031: 100% 33/33 [00:52<00:00,  1.58s/it]
+Validating
+100% 2/2 [00:03<00:00,  1.68s/it]
+/usr/local/lib/python3.10/dist-packages/torchmetrics/utilities/prints.py:43: UserWarning: Encountered more than 100 detections in a single image. This means that certain detections with the lowest scores will be ignored, that may have an undesirable impact on performance. Please consider adjusting the `max_detection_threshold` to suit your use case. To disable this warning, set attribute class `warn_on_many_detections=False`, after initializing the metric.
+  warnings.warn(*args, **kwargs)  # noqa: B028
+Epoch 2 train loss: 6.507378896077474
+Epoch 2 mAP: 0.03644159808754921
+ 0.947 minutes taken to complete epoch 1
+
+Validation mAP: 0.03644159808754921
+
+Best model saved for: 2
+
+SAVING PLOTS COMPLETE...
+
+EPOCH 3 of 25
+Training
+Loss: 5.4303: 100% 33/33 [00:49<00:00,  1.51s/it]
+Validating
+100% 2/2 [00:03<00:00,  1.62s/it]
+Epoch 3 train loss: 5.67418147578384
+Epoch 3 mAP: 0.057332202792167664
+ 0.908 minutes taken to complete epoch 2
+
+Validation mAP: 0.057332202792167664
+
+Best model saved for: 3
+
+SAVING PLOTS COMPLETE...
+
+EPOCH 4 of 25
+Training
+Loss: 4.7185: 100% 33/33 [00:50<00:00,  1.53s/it]
+Validating
+100% 2/2 [00:03<00:00,  1.66s/it]
+Epoch 4 train loss: 5.334767832900539
+Epoch 4 mAP: 0.07370919734239578
+ 0.917 minutes taken to complete epoch 3
+
+Validation mAP: 0.07370919734239578
+
+Best model saved for: 4
+
+SAVING PLOTS COMPLETE...
+
+EPOCH 5 of 25
+Training
+Loss: 5.5009: 100% 33/33 [00:49<00:00,  1.51s/it]
+Validating
+100% 2/2 [00:03<00:00,  1.58s/it]
+Epoch 5 train loss: 5.0748444903980605
+Epoch 5 mAP: 0.08375780284404755
+ 0.904 minutes taken to complete epoch 4
+
+Validation mAP: 0.08375780284404755
+
+Best model saved for: 5
+
+SAVING PLOTS COMPLETE...
+
+EPOCH 6 of 25
+Training
+Loss: 5.2429: 100% 33/33 [00:50<00:00,  1.53s/it]
+Validating
+100% 2/2 [00:03<00:00,  1.52s/it]
+Epoch 6 train loss: 4.898863171086167
+Epoch 6 mAP: 0.09984315186738968
+ 0.910 minutes taken to complete epoch 5
+
+Validation mAP: 0.09984315186738968
+
+Best model saved for: 6
+
+SAVING PLOTS COMPLETE...
+
+EPOCH 7 of 25
+Training
+Loss: 4.4592: 100% 33/33 [00:49<00:00,  1.50s/it]
+Validating
+100% 2/2 [00:02<00:00,  1.44s/it]
+Epoch 7 train loss: 4.752475276137844
+Epoch 7 mAP: 0.10830517113208771
+ 0.893 minutes taken to complete epoch 6
+
+Validation mAP: 0.10830517113208771
+
+Best model saved for: 7
+
+SAVING PLOTS COMPLETE...
+
+EPOCH 8 of 25
+Training
+Loss: 4.5318: 100% 33/33 [00:49<00:00,  1.50s/it]
+Validating
+100% 2/2 [00:02<00:00,  1.46s/it]
+Epoch 8 train loss: 4.624494408116196
+Epoch 8 mAP: 0.12411944568157196
+ 0.893 minutes taken to complete epoch 7
+
+Validation mAP: 0.12411944568157196
+
+Best model saved for: 8
+
+SAVING PLOTS COMPLETE...
+
+EPOCH 9 of 25
+Training
+Loss: 4.5668: 100% 33/33 [00:50<00:00,  1.53s/it]
+Validating
+100% 2/2 [00:02<00:00,  1.46s/it]
+Epoch 9 train loss: 4.531521334792629
+Epoch 9 mAP: 0.13272695243358612
+ 0.909 minutes taken to complete epoch 8
+
+Validation mAP: 0.13272695243358612
+
+Best model saved for: 9
+
+SAVING PLOTS COMPLETE...
+
+EPOCH 10 of 25
+Training
+Loss: 4.3341: 100% 33/33 [00:49<00:00,  1.51s/it]
+Validating
+100% 2/2 [00:03<00:00,  1.55s/it]
+Epoch 10 train loss: 4.4396913701837715
+Epoch 10 mAP: 0.14352355897426605
+ 0.902 minutes taken to complete epoch 9
+
+Validation mAP: 0.14352355897426605
+
+Best model saved for: 10
+
+SAVING PLOTS COMPLETE...
+
+EPOCH 11 of 25
+Training
+Loss: 4.1454: 100% 33/33 [00:49<00:00,  1.50s/it]
+Validating
+100% 2/2 [00:03<00:00,  1.67s/it]
+Epoch 11 train loss: 4.375283754233158
+Epoch 11 mAP: 0.1555180698633194
+ 0.902 minutes taken to complete epoch 10
+
+Validation mAP: 0.1555180698633194
+
+Best model saved for: 11
+
+SAVING PLOTS COMPLETE...
+
+EPOCH 12 of 25
+Training
+Loss: 3.7957: 100% 33/33 [00:52<00:00,  1.59s/it]
+Validating
+100% 2/2 [00:03<00:00,  1.73s/it]
+Epoch 12 train loss: 4.294341817046657
+Epoch 12 mAP: 0.16520491242408752
+ 0.952 minutes taken to complete epoch 11
+
+Validation mAP: 0.16520491242408752
+
+Best model saved for: 12
+
+SAVING PLOTS COMPLETE...
+
+EPOCH 13 of 25
+Training
+Loss: 4.3023: 100% 33/33 [00:53<00:00,  1.64s/it]
+Validating
+100% 2/2 [00:02<00:00,  1.13s/it]
+Epoch 13 train loss: 4.207660566676747
+Epoch 13 mAP: 0.1764284074306488
+ 0.949 minutes taken to complete epoch 12
+
+Validation mAP: 0.1764284074306488
+
+Best model saved for: 13
+
+SAVING PLOTS COMPLETE...
+
+EPOCH 14 of 25
+Training
+Loss: 4.2866: 100% 33/33 [00:51<00:00,  1.55s/it]
+Validating
+100% 2/2 [00:02<00:00,  1.15s/it]
+Epoch 14 train loss: 4.171517776720451
+Epoch 14 mAP: 0.17996881902217865
+ 0.901 minutes taken to complete epoch 13
+
+Validation mAP: 0.17996881902217865
+
+Best model saved for: 14
+
+SAVING PLOTS COMPLETE...
+
+EPOCH 15 of 25
+Training
+Loss: 4.2805: 100% 33/33 [00:50<00:00,  1.52s/it]
+Validating
+100% 2/2 [00:03<00:00,  1.81s/it]
+Epoch 15 train loss: 4.091962431416367
+Epoch 15 mAP: 0.18390017747879028
+ 0.915 minutes taken to complete epoch 14
+
+Validation mAP: 0.18390017747879028
+
+Best model saved for: 15
+
+SAVING PLOTS COMPLETE...
+
+EPOCH 16 of 25
+Training
+Loss: 3.8456: 100% 33/33 [00:49<00:00,  1.51s/it]
+Validating
+100% 2/2 [00:03<00:00,  1.69s/it]
+Epoch 16 train loss: 4.057568882450913
+Epoch 16 mAP: 0.18707998096942902
+ 0.903 minutes taken to complete epoch 15
+
+Validation mAP: 0.18707998096942902
+
+Best model saved for: 16
+
+SAVING PLOTS COMPLETE...
+
+EPOCH 17 of 25
+Training
+Loss: 3.6883: 100% 33/33 [00:50<00:00,  1.52s/it]
+Validating
+100% 2/2 [00:03<00:00,  1.64s/it]
+Epoch 17 train loss: 4.098484407771718
+Epoch 17 mAP: 0.18727265298366547
+ 0.908 minutes taken to complete epoch 16
+
+Validation mAP: 0.18727265298366547
+
+Best model saved for: 17
+
+SAVING PLOTS COMPLETE...
+
+EPOCH 18 of 25
+Training
+Loss: 4.0175: 100% 33/33 [00:50<00:00,  1.54s/it]
+Validating
+100% 2/2 [00:03<00:00,  1.75s/it]
+Epoch 18 train loss: 4.0527503562696054
+Epoch 18 mAP: 0.18633273243904114
+ 0.921 minutes taken to complete epoch 17
+SAVING PLOTS COMPLETE...
+
+EPOCH 19 of 25
+Training
+Loss: 3.9691: 100% 33/33 [00:50<00:00,  1.52s/it]
+Validating
+100% 2/2 [00:03<00:00,  1.64s/it]
+Epoch 19 train loss: 4.03828662814516
+Epoch 19 mAP: 0.18579043447971344
+ 0.906 minutes taken to complete epoch 18
+SAVING PLOTS COMPLETE...
+
+EPOCH 20 of 25
+Training
+Loss: 4.2121: 100% 33/33 [00:49<00:00,  1.50s/it]
+Validating
+100% 2/2 [00:02<00:00,  1.16s/it]
+Epoch 20 train loss: 4.0415480425863555
+Epoch 20 mAP: 0.18857143819332123
+ 0.880 minutes taken to complete epoch 19
+
+Validation mAP: 0.18857143819332123
+
+Best model saved for: 20
+
+SAVING PLOTS COMPLETE...
+
+EPOCH 21 of 25
+Training
+Loss: 4.3788: 100% 33/33 [00:50<00:00,  1.53s/it]
+Validating
+100% 2/2 [00:02<00:00,  1.20s/it]
+Epoch 21 train loss: 4.054765325604063
+Epoch 21 mAP: 0.1871163547039032
+ 0.899 minutes taken to complete epoch 20
+SAVING PLOTS COMPLETE...
+
+EPOCH 22 of 25
+Training
+Loss: 4.0098: 100% 33/33 [00:49<00:00,  1.50s/it]
+Validating
+100% 2/2 [00:03<00:00,  1.61s/it]
+Epoch 22 train loss: 4.045217810255108
+Epoch 22 mAP: 0.18814067542552948
+ 0.898 minutes taken to complete epoch 21
+SAVING PLOTS COMPLETE...
+
+EPOCH 23 of 25
+Training
+Loss: 4.0282: 100% 33/33 [00:49<00:00,  1.49s/it]
+Validating
+100% 2/2 [00:02<00:00,  1.42s/it]
+Epoch 23 train loss: 4.035891821890166
+Epoch 23 mAP: 0.19046680629253387
+ 0.883 minutes taken to complete epoch 22
+
+Validation mAP: 0.19046680629253387
+
+Best model saved for: 23
+
+SAVING PLOTS COMPLETE...
+
+EPOCH 24 of 25
+Training
+Loss: 3.8207: 100% 33/33 [00:50<00:00,  1.52s/it]
+Validating
+100% 2/2 [00:03<00:00,  1.67s/it]
+Epoch 24 train loss: 4.014528202288078
+Epoch 24 mAP: 0.19148506224155426
+ 0.911 minutes taken to complete epoch 23
+
+Validation mAP: 0.19148506224155426
+
+Best model saved for: 24
+
+SAVING PLOTS COMPLETE...
+
+EPOCH 25 of 25
+Training
+Loss: 4.1627: 100% 33/33 [00:49<00:00,  1.51s/it]
+Validating
+100% 2/2 [00:03<00:00,  1.67s/it]
+Epoch 25 train loss: 4.039774598497333
+Epoch 25 mAP: 0.19280365109443665
+ 0.906 minutes taken to complete epoch 24
+
+Validation mAP: 0.19280365109443665
+
+Best model saved for: 25
+
+Plots saved...

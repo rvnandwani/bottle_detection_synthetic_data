@@ -1,0 +1,576 @@
+/usr/local/lib/python3.10/dist-packages/albumentations/core/composition.py:156: UserWarning: Got processor for bboxes, but no transform to process it.
+  self._set_keys()
+/usr/local/lib/python3.10/dist-packages/torch/utils/data/dataloader.py:558: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+Number of training samples: 331
+Number of validation samples: 25
+
+Seed Value set to :  15
+SSD(
+  (backbone): SSDFeatureExtractorVGG(
+    (features): Sequential(
+      (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (1): ReLU(inplace=True)
+      (2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (3): ReLU(inplace=True)
+      (4): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+      (5): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (6): ReLU(inplace=True)
+      (7): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (8): ReLU(inplace=True)
+      (9): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+      (10): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (11): ReLU(inplace=True)
+      (12): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (13): ReLU(inplace=True)
+      (14): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (15): ReLU(inplace=True)
+      (16): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=True)
+      (17): Conv2d(256, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (18): ReLU(inplace=True)
+      (19): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (20): ReLU(inplace=True)
+      (21): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      (22): ReLU(inplace=True)
+    )
+    (extra): ModuleList(
+      (0): Sequential(
+        (0): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+        (1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (2): ReLU(inplace=True)
+        (3): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (4): ReLU(inplace=True)
+        (5): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (6): ReLU(inplace=True)
+        (7): Sequential(
+          (0): MaxPool2d(kernel_size=3, stride=1, padding=1, dilation=1, ceil_mode=False)
+          (1): Conv2d(512, 1024, kernel_size=(3, 3), stride=(1, 1), padding=(6, 6), dilation=(6, 6))
+          (2): ReLU(inplace=True)
+          (3): Conv2d(1024, 1024, kernel_size=(1, 1), stride=(1, 1))
+          (4): ReLU(inplace=True)
+        )
+      )
+      (1): Sequential(
+        (0): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1))
+        (1): ReLU(inplace=True)
+        (2): Conv2d(256, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+        (3): ReLU(inplace=True)
+      )
+      (2): Sequential(
+        (0): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1))
+        (1): ReLU(inplace=True)
+        (2): Conv2d(128, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1))
+        (3): ReLU(inplace=True)
+      )
+      (3-4): 2 x Sequential(
+        (0): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1))
+        (1): ReLU(inplace=True)
+        (2): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1))
+        (3): ReLU(inplace=True)
+      )
+    )
+  )
+  (anchor_generator): DefaultBoxGenerator(aspect_ratios=[[2], [2, 3], [2, 3], [2, 3], [2], [2]], clip=True, scales=[0.07, 0.15, 0.33, 0.51, 0.69, 0.87, 1.05], steps=[8, 16, 32, 64, 100, 300])
+  (head): SSDHead(
+    (classification_head): SSDClassificationHead(
+      (module_list): ModuleList(
+        (0): Conv2d(512, 12, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): Conv2d(1024, 18, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (2): Conv2d(512, 18, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (3): Conv2d(256, 18, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (4-5): 2 x Conv2d(256, 12, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+    )
+    (regression_head): SSDRegressionHead(
+      (module_list): ModuleList(
+        (0): Conv2d(512, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (1): Conv2d(1024, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (2): Conv2d(512, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (3): Conv2d(256, 24, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+        (4-5): 2 x Conv2d(256, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+    )
+  )
+  (transform): GeneralizedRCNNTransform(
+      Normalize(mean=[0.48235, 0.45882, 0.40784], std=[0.00392156862745098, 0.00392156862745098, 0.00392156862745098])
+      Resize(min_size=(640,), max_size=640, mode='bilinear')
+  )
+)
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:28: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn("The verbose parameter is deprecated. Please use get_last_lr() "
+Optimizer used is SGD and Parameters set as follows : 
+ Learning Rate : 0.0001
+ Momentum : 0.9
+ Step size : 15
+ Gamma : 0.1
+
+EPOCH 1 of 35
+Training
+Loss: 6.1427: 100% 33/33 [00:47<00:00,  1.44s/it]
+Validating
+100% 2/2 [00:02<00:00,  1.21s/it]
+/usr/local/lib/python3.10/dist-packages/torchmetrics/utilities/prints.py:43: UserWarning: Encountered more than 100 detections in a single image. This means that certain detections with the lowest scores will be ignored, that may have an undesirable impact on performance. Please consider adjusting the `max_detection_threshold` to suit your use case. To disable this warning, set attribute class `warn_on_many_detections=False`, after initializing the metric.
+  warnings.warn(*args, **kwargs)  # noqa: B028
+Epoch 1 train loss: 7.115250862005985
+Epoch 1 mAP: 0.03425914794206619
+ 0.847 minutes taken to complete epoch 0
+
+Validation mAP: 0.03425914794206619
+
+Best model saved for: 1
+
+Plots saved...
+
+EPOCH 2 of 35
+Training
+  0% 0/33 [00:00<?, ?it/s]/usr/local/lib/python3.10/dist-packages/torch/utils/data/dataloader.py:558: UserWarning: This DataLoader will create 4 worker processes in total. Our suggested max number of worker in current system is 2, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+Loss: 5.6488: 100% 33/33 [00:50<00:00,  1.54s/it]
+Validating
+100% 2/2 [00:02<00:00,  1.15s/it]
+/usr/local/lib/python3.10/dist-packages/torchmetrics/utilities/prints.py:43: UserWarning: Encountered more than 100 detections in a single image. This means that certain detections with the lowest scores will be ignored, that may have an undesirable impact on performance. Please consider adjusting the `max_detection_threshold` to suit your use case. To disable this warning, set attribute class `warn_on_many_detections=False`, after initializing the metric.
+  warnings.warn(*args, **kwargs)  # noqa: B028
+Epoch 2 train loss: 5.833666873700691
+Epoch 2 mAP: 0.08339379727840424
+ 0.899 minutes taken to complete epoch 1
+
+Validation mAP: 0.08339379727840424
+
+Best model saved for: 2
+
+Plots saved...
+
+EPOCH 3 of 35
+Training
+Loss: 4.8383: 100% 33/33 [00:50<00:00,  1.53s/it]
+Validating
+100% 2/2 [00:03<00:00,  1.83s/it]
+Epoch 3 train loss: 5.263733892729788
+Epoch 3 mAP: 0.1415693461894989
+ 0.919 minutes taken to complete epoch 2
+
+Validation mAP: 0.1415693461894989
+
+Best model saved for: 3
+
+Plots saved...
+
+EPOCH 4 of 35
+Training
+Loss: 4.6530: 100% 33/33 [00:49<00:00,  1.51s/it]
+Validating
+100% 2/2 [00:03<00:00,  1.77s/it]
+Epoch 4 train loss: 4.851410518993031
+Epoch 4 mAP: 0.1779479831457138
+ 0.912 minutes taken to complete epoch 3
+
+Validation mAP: 0.1779479831457138
+
+Best model saved for: 4
+
+Plots saved...
+
+EPOCH 5 of 35
+Training
+Loss: 4.3471: 100% 33/33 [00:50<00:00,  1.52s/it]
+Validating
+100% 2/2 [00:03<00:00,  1.70s/it]
+Epoch 5 train loss: 4.546816941463586
+Epoch 5 mAP: 0.20368464291095734
+ 0.913 minutes taken to complete epoch 4
+
+Validation mAP: 0.20368464291095734
+
+Best model saved for: 5
+
+Plots saved...
+
+EPOCH 6 of 35
+Training
+Loss: 4.1083: 100% 33/33 [00:49<00:00,  1.49s/it]
+Validating
+100% 2/2 [00:02<00:00,  1.42s/it]
+Epoch 6 train loss: 4.302485653848359
+Epoch 6 mAP: 0.21809972822666168
+ 0.888 minutes taken to complete epoch 5
+
+Validation mAP: 0.21809972822666168
+
+Best model saved for: 6
+
+Plots saved...
+
+EPOCH 7 of 35
+Training
+Loss: 4.0840: 100% 33/33 [00:54<00:00,  1.65s/it]
+Validating
+100% 2/2 [00:02<00:00,  1.16s/it]
+Epoch 7 train loss: 4.128174239938909
+Epoch 7 mAP: 0.23319385945796967
+ 0.960 minutes taken to complete epoch 6
+
+Validation mAP: 0.23319385945796967
+
+Best model saved for: 7
+
+Plots saved...
+
+EPOCH 8 of 35
+Training
+Loss: 3.8310: 100% 33/33 [00:50<00:00,  1.54s/it]
+Validating
+100% 2/2 [00:03<00:00,  1.85s/it]
+Epoch 8 train loss: 3.9783270359039307
+Epoch 8 mAP: 0.24054989218711853
+ 0.930 minutes taken to complete epoch 7
+
+Validation mAP: 0.24054989218711853
+
+Best model saved for: 8
+
+Plots saved...
+
+EPOCH 9 of 35
+Training
+Loss: 3.6995: 100% 33/33 [00:51<00:00,  1.56s/it]
+Validating
+100% 2/2 [00:04<00:00,  2.24s/it]
+Epoch 9 train loss: 3.8715986049536504
+Epoch 9 mAP: 0.25269168615341187
+ 0.954 minutes taken to complete epoch 8
+
+Validation mAP: 0.25269168615341187
+
+Best model saved for: 9
+
+Plots saved...
+
+EPOCH 10 of 35
+Training
+Loss: 3.8819: 100% 33/33 [00:49<00:00,  1.51s/it]
+Validating
+100% 2/2 [00:03<00:00,  1.71s/it]
+Epoch 10 train loss: 3.765737974282467
+Epoch 10 mAP: 0.25709325075149536
+ 0.911 minutes taken to complete epoch 9
+
+Validation mAP: 0.25709325075149536
+
+Best model saved for: 10
+
+Plots saved...
+
+EPOCH 11 of 35
+Training
+Loss: 3.8541: 100% 33/33 [00:49<00:00,  1.50s/it]
+Validating
+100% 2/2 [00:03<00:00,  1.66s/it]
+Epoch 11 train loss: 3.689965602123376
+Epoch 11 mAP: 0.271854043006897
+ 0.904 minutes taken to complete epoch 10
+
+Validation mAP: 0.271854043006897
+
+Best model saved for: 11
+
+Plots saved...
+
+EPOCH 12 of 35
+Training
+Loss: 3.8251: 100% 33/33 [00:50<00:00,  1.53s/it]
+Validating
+100% 2/2 [00:03<00:00,  1.74s/it]
+Epoch 12 train loss: 3.622798320018884
+Epoch 12 mAP: 0.27317407727241516
+ 0.922 minutes taken to complete epoch 11
+
+Validation mAP: 0.27317407727241516
+
+Best model saved for: 12
+
+Plots saved...
+
+EPOCH 13 of 35
+Training
+Loss: 3.6698: 100% 33/33 [00:49<00:00,  1.51s/it]
+Validating
+100% 2/2 [00:03<00:00,  1.60s/it]
+Epoch 13 train loss: 3.5522024775996353
+Epoch 13 mAP: 0.28436994552612305
+ 0.908 minutes taken to complete epoch 12
+
+Validation mAP: 0.28436994552612305
+
+Best model saved for: 13
+
+Plots saved...
+
+EPOCH 14 of 35
+Training
+Loss: 3.5027: 100% 33/33 [00:49<00:00,  1.51s/it]
+Validating
+100% 2/2 [00:03<00:00,  1.74s/it]
+Epoch 14 train loss: 3.5048810640970864
+Epoch 14 mAP: 0.2877383530139923
+ 0.911 minutes taken to complete epoch 13
+
+Validation mAP: 0.2877383530139923
+
+Best model saved for: 14
+
+Plots saved...
+
+EPOCH 15 of 35
+Training
+Loss: 3.6121: 100% 33/33 [00:52<00:00,  1.60s/it]
+Validating
+100% 2/2 [00:03<00:00,  1.79s/it]
+Epoch 15 train loss: 3.4570485028353604
+Epoch 15 mAP: 0.28905290365219116
+ 0.956 minutes taken to complete epoch 14
+
+Validation mAP: 0.28905290365219116
+
+Best model saved for: 15
+
+Plots saved...
+
+EPOCH 16 of 35
+Training
+Loss: 3.3808: 100% 33/33 [00:49<00:00,  1.50s/it]
+Validating
+100% 2/2 [00:03<00:00,  1.60s/it]
+Epoch 16 train loss: 3.4120057640653667
+Epoch 16 mAP: 0.2894805371761322
+ 0.901 minutes taken to complete epoch 15
+
+Validation mAP: 0.2894805371761322
+
+Best model saved for: 16
+
+Plots saved...
+
+EPOCH 17 of 35
+Training
+Loss: 3.5747: 100% 33/33 [00:49<00:00,  1.50s/it]
+Validating
+100% 2/2 [00:03<00:00,  1.94s/it]
+Epoch 17 train loss: 3.403903527693315
+Epoch 17 mAP: 0.29064273834228516
+ 0.914 minutes taken to complete epoch 16
+
+Validation mAP: 0.29064273834228516
+
+Best model saved for: 17
+
+Plots saved...
+
+EPOCH 18 of 35
+Training
+Loss: 3.3319: 100% 33/33 [00:50<00:00,  1.52s/it]
+Validating
+100% 2/2 [00:02<00:00,  1.44s/it]
+Epoch 18 train loss: 3.3987584908803306
+Epoch 18 mAP: 0.2946631610393524
+ 0.903 minutes taken to complete epoch 17
+
+Validation mAP: 0.2946631610393524
+
+Best model saved for: 18
+
+Plots saved...
+
+EPOCH 19 of 35
+Training
+Loss: 3.3163: 100% 33/33 [00:49<00:00,  1.49s/it]
+Validating
+100% 2/2 [00:03<00:00,  1.52s/it]
+Epoch 19 train loss: 3.3944017453627153
+Epoch 19 mAP: 0.29487863183021545
+ 0.890 minutes taken to complete epoch 18
+
+Validation mAP: 0.29487863183021545
+
+Best model saved for: 19
+
+Plots saved...
+
+EPOCH 20 of 35
+Training
+Loss: 3.4639: 100% 33/33 [00:49<00:00,  1.50s/it]
+Validating
+100% 2/2 [00:03<00:00,  1.71s/it]
+Epoch 20 train loss: 3.385513211741592
+Epoch 20 mAP: 0.2919953465461731
+ 0.909 minutes taken to complete epoch 19
+Plots saved...
+
+EPOCH 21 of 35
+Training
+Loss: 3.4939: 100% 33/33 [00:49<00:00,  1.49s/it]
+Validating
+100% 2/2 [00:02<00:00,  1.23s/it]
+Epoch 21 train loss: 3.387961264812585
+Epoch 21 mAP: 0.29506826400756836
+ 0.882 minutes taken to complete epoch 20
+
+Validation mAP: 0.29506826400756836
+
+Best model saved for: 21
+
+Plots saved...
+
+EPOCH 22 of 35
+Training
+Loss: 3.5374: 100% 33/33 [00:49<00:00,  1.51s/it]
+Validating
+100% 2/2 [00:02<00:00,  1.37s/it]
+Epoch 22 train loss: 3.3792833414944736
+Epoch 22 mAP: 0.29453492164611816
+ 0.897 minutes taken to complete epoch 21
+Plots saved...
+
+EPOCH 23 of 35
+Training
+Loss: 3.5686: 100% 33/33 [00:49<00:00,  1.51s/it]
+Validating
+100% 2/2 [00:02<00:00,  1.15s/it]
+Epoch 23 train loss: 3.377924160523848
+Epoch 23 mAP: 0.29279637336730957
+ 0.890 minutes taken to complete epoch 22
+Plots saved...
+
+EPOCH 24 of 35
+Training
+Loss: 3.3609: 100% 33/33 [00:49<00:00,  1.49s/it]
+Validating
+100% 2/2 [00:02<00:00,  1.17s/it]
+Epoch 24 train loss: 3.375789584535541
+Epoch 24 mAP: 0.29552334547042847
+ 0.880 minutes taken to complete epoch 23
+
+Validation mAP: 0.29552334547042847
+
+Best model saved for: 24
+
+Plots saved...
+
+EPOCH 25 of 35
+Training
+Loss: 3.5594: 100% 33/33 [00:50<00:00,  1.53s/it]
+Validating
+100% 2/2 [00:02<00:00,  1.39s/it]
+Epoch 25 train loss: 3.368177283893932
+Epoch 25 mAP: 0.2937110960483551
+ 0.908 minutes taken to complete epoch 24
+Plots saved...
+
+EPOCH 26 of 35
+Training
+Loss: 3.2999: 100% 33/33 [00:49<00:00,  1.49s/it]
+Validating
+100% 2/2 [00:02<00:00,  1.22s/it]
+Epoch 26 train loss: 3.3661984819354434
+Epoch 26 mAP: 0.29561832547187805
+ 0.883 minutes taken to complete epoch 25
+
+Validation mAP: 0.29561832547187805
+
+Best model saved for: 26
+
+Plots saved...
+
+EPOCH 27 of 35
+Training
+Loss: 3.5066: 100% 33/33 [00:50<00:00,  1.52s/it]
+Validating
+100% 2/2 [00:02<00:00,  1.45s/it]
+Epoch 27 train loss: 3.362247134699966
+Epoch 27 mAP: 0.2966112494468689
+ 0.906 minutes taken to complete epoch 26
+
+Validation mAP: 0.2966112494468689
+
+Best model saved for: 27
+
+Plots saved...
+
+EPOCH 28 of 35
+Training
+Loss: 3.3655: 100% 33/33 [00:49<00:00,  1.51s/it]
+Validating
+100% 2/2 [00:03<00:00,  1.70s/it]
+Epoch 28 train loss: 3.3540626150189023
+Epoch 28 mAP: 0.2960934638977051
+ 0.916 minutes taken to complete epoch 27
+Plots saved...
+
+EPOCH 29 of 35
+Training
+Loss: 3.3522: 100% 33/33 [00:49<00:00,  1.49s/it]
+Validating
+100% 2/2 [00:03<00:00,  1.72s/it]
+Epoch 29 train loss: 3.3522778424349697
+Epoch 29 mAP: 0.29431718587875366
+ 0.900 minutes taken to complete epoch 28
+Plots saved...
+
+EPOCH 30 of 35
+Training
+Loss: 3.3561: 100% 33/33 [00:48<00:00,  1.48s/it]
+Validating
+100% 2/2 [00:02<00:00,  1.48s/it]
+Epoch 30 train loss: 3.3486524278467353
+Epoch 30 mAP: 0.29530641436576843
+ 0.888 minutes taken to complete epoch 29
+Plots saved...
+
+EPOCH 31 of 35
+Training
+Loss: 3.3467: 100% 33/33 [00:49<00:00,  1.49s/it]
+Validating
+100% 2/2 [00:02<00:00,  1.33s/it]
+Epoch 31 train loss: 3.338815147226507
+Epoch 31 mAP: 0.296505868434906
+ 0.887 minutes taken to complete epoch 30
+Plots saved...
+
+EPOCH 32 of 35
+Training
+Loss: 3.4493: 100% 33/33 [00:54<00:00,  1.66s/it]
+Validating
+100% 2/2 [00:02<00:00,  1.47s/it]
+Epoch 32 train loss: 3.3451894630085337
+Epoch 32 mAP: 0.2961956858634949
+ 0.981 minutes taken to complete epoch 31
+Plots saved...
+
+EPOCH 33 of 35
+Training
+Loss: 3.4102: 100% 33/33 [01:03<00:00,  1.94s/it]
+Validating
+100% 2/2 [00:03<00:00,  1.52s/it]
+Epoch 33 train loss: 3.3460848981683906
+Epoch 33 mAP: 0.2964503765106201
+ 1.131 minutes taken to complete epoch 32
+Plots saved...
+
+EPOCH 34 of 35
+Training
+Loss: 3.2378: 100% 33/33 [01:01<00:00,  1.87s/it]
+Validating
+100% 2/2 [00:03<00:00,  1.95s/it]
+Epoch 34 train loss: 3.347455935044722
+Epoch 34 mAP: 0.2963602542877197
+ 1.118 minutes taken to complete epoch 33
+Plots saved...
+
+EPOCH 35 of 35
+Training
+Loss: 3.2362: 100% 33/33 [00:58<00:00,  1.78s/it]
+Validating
+100% 2/2 [00:04<00:00,  2.03s/it]
+Epoch 35 train loss: 3.3437184637243096
+Epoch 35 mAP: 0.29650118947029114
+ 1.079 minutes taken to complete epoch 34
+Plots saved...
