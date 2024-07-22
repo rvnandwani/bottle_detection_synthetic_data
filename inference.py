@@ -34,8 +34,8 @@ colors = [[0, 0, 0], [255, 0, 0], [0, 255, 0]]
 
 #################################
 # Load the best model and trained weights.
-model = ResnetWithAnchors(num_classes=class_num)
-# model = InbuiltSSD(num_classes=class_num)
+# model = ResnetWithAnchors(num_classes=class_num)
+model = InbuiltSSD(num_classes=class_num)
 
 checkpoint = torch.load("outputs/best_model.pth", map_location=device)
 model.load_state_dict(checkpoint["model_state_dict"])

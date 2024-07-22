@@ -62,8 +62,8 @@ if __name__ == "__main__":
 
     #################################
     # Select Model type
-    model = ResnetWithAnchors(3)
-    # model = InbuiltSSD(3)
+    # model = ResnetWithAnchors(3)
+    model = InbuiltSSD(3)
 
     print(model)
     total_params = sum(p.numel() for p in model.parameters())
