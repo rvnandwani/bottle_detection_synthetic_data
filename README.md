@@ -55,7 +55,7 @@ You can find my training logs for [`ResnetWithAnchors`](outputs_resnet_e25/Resne
 ## Inference
 Once the training is done we can run the following command to generate inferences from the model
 ```bash
-python inference.py --input target_images --model outputs/best_model.pth --output inference_outputs/images
+python inference.py --input target_images --model outputs/best_model.pth --output inference_outputs/images --threshold 0.25 
 ```
 - **--input** : type`str`. directory for input images on which inference will be conducted
 - **--model** : type`str`. directory and file of model checkpoint to be used. *default*: `outputs/best_model.pth`
