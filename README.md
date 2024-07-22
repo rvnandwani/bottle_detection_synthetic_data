@@ -61,14 +61,14 @@ python inference.py --input target_images --model outputs/best_model.pth --outpu
 - **--model** : type`str`. directory and file of model checkpoint to be used. *default*: `outputs/best_model.pth`
 - **--output** : type`str`Number of batches *default* : `inference_outputs/images`
 
-## Observation and Results
+# Observation and Results
 
-### Reason for the model
+## Reason for the model
 
 I used `InbuiltSSD` model because of its known versatility and performance, being optimized and trained on COCO dataset it has been known to perform well in all general object scenarios. So this model generates good results and establishes benchmarks for me to compare with my own implementation.
 There were multiple motivations for me to make my own model. When we see the SSD300 architecture it uses VGG16 like backbone for feature extraction. I experimented with using a ResNet architecture for the same as ResNet architecture helps with capturing hierarchical features at various image sizes. For the head, I experimented with custom anchors of 3 different aspect ratios to capture the tall objects of our use case as both test and training images had tall standing bottles
 
-### Observation
+## Observation
 Visually inspecting the `target_images` \[[SSD](inference_outputs/ssd_target_images/) , [ResNet](inference_outputs/resnet_target_images/) \] and validation set results\[[SSD](inference_outputs/ssd_val_images/) , [ResNet](inference_outputs/resnet_val_images) \], along with observing the `mAP` plots of validation set, `InbuiltSSD` model outperforms our custom `ResnetWithAnchors` model I could think of the following reasons for the same
 1. `ResnetWithAnchors` classification head is not flexible for feature extraction and classification in handling varying object sizes as it has uniform channels i.e. 24 for classification and 32 for regression, while `InbuiltSSD` model has different configurations for each layer
 2. The presence of relatively more wide range of scale i.e. 0.07 to 1.05 in `InbuiltSSD` model compared to 0.15 to 1.0 in `ResnetWithAnchors` could have provided finer granularity for smaller objects combined with the `steps` could help in better localization as well.
