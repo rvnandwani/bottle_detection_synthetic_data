@@ -70,7 +70,7 @@ There were multiple motivations for me to make my own model. When we see the SSD
 
 ### Observation
 Visually inspecting the `target_images` \[[SSD](inference_outputs/ssd_target_images/) , [ResNet](inference_outputs/resnet_target_images/) \] and validation set results\[[SSD](inference_outputs/ssd_val_images/) , [ResNet](inference_outputs/resnet_val_images) \], along with observing the `mAP` plots of validation set, `InbuiltSSD` model outperforms our custom `ResnetWithAnchors` model I could think of the following reasons for the same
-1. `ResnetWithAnchors` classification head is not flexible in handling varying object sizes as it has uniform channels for feature extraction and classification
+1. `ResnetWithAnchors` classification head is not flexible for feature extraction and classification in handling varying object sizes as it has uniform channels i.e. 24 for classification and 32 for regression, while `InbuiltSSD` model has different configurations for each layer
 2. The presence of relatively more wide range of scale i.e. 0.07 to 1.05 in `InbuiltSSD` model compared to 0.15 to 1.0 in `ResnetWithAnchors` could have provided finer granularity for smaller objects combined with the `steps` could help in better localization as well.
 
 ### Future Improvements
