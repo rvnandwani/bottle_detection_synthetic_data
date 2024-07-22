@@ -19,6 +19,12 @@ parser.add_argument(
     help="path to input image directory",
 )
 parser.add_argument(
+    "-m",
+    "--model",
+    default="outputs/best_model.pth",
+    help="path to model file (.pth)",
+)
+parser.add_argument(
     "-o",
     "--output",
     default="inference_outputs/images",
@@ -37,7 +43,7 @@ colors = [[0, 0, 0], [255, 0, 0], [0, 255, 0]]
 # model = ResnetWithAnchors(num_classes=class_num)
 model = InbuiltSSD(num_classes=class_num)
 
-checkpoint = torch.load("outputs/best_model.pth", map_location=device)
+checkpoint = torch.load(args["model"], map_location=device)
 model.load_state_dict(checkpoint["model_state_dict"])
 model.to(device)
 model.eval()

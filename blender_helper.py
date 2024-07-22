@@ -214,8 +214,8 @@ def add_light_source(
     """
 
     light_data = bpy.data.lights.new(name=light_name, type="SUN")
-    # light_data.energy = np.random.uniform(strength_range[0], strength_range[1])
-    light_data.energy = 0.5
+    light_data.energy = np.random.uniform(strength_range[0], strength_range[1])
+    # light_data.energy = 0.5
     light_source = bpy.data.objects.new(name="light", object_data=light_data)
     bpy.context.collection.objects.link(light_source)
     light_source.location.x = np.random.uniform(x_range[0], x_range[1])
