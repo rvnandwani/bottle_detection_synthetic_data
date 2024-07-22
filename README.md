@@ -59,7 +59,8 @@ python inference.py --input target_images --model outputs/best_model.pth --outpu
 ```
 - **--input** : type`str`. directory for input images on which inference will be conducted
 - **--model** : type`str`. directory and file of model checkpoint to be used. *default*: `outputs/best_model.pth`
-- **--output** : type`str`Number of batches *default* : `inference_outputs/images`
+- **--output** : type`str` directory to store inference output *default* : `inference_outputs/images`
+- **--threshold** : type`int` threshold for object detection score *default* : `0.25`
 
 # Observation and Results
 
