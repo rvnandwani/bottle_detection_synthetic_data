@@ -66,7 +66,6 @@ class CustomDataset(Dataset):
         return len(self.all_images)
 
 
-# Prepare the final datasets and data loaders.
 def create_train_dataset():
     train_dataset = CustomDataset(dir_train, classes, ann_train, get_train_transform())
     return train_dataset

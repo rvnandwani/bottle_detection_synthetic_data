@@ -193,7 +193,7 @@ Validation mAP: 0.021808113902807236
 
 Best model saved for: 1
 
-SAVING PLOTS COMPLETE...
+Plots saved...
 
 EPOCH 2 of 25
 Training
@@ -212,7 +212,7 @@ Validation mAP: 0.03644159808754921
 
 Best model saved for: 2
 
-SAVING PLOTS COMPLETE...
+Plots saved...
 
 EPOCH 3 of 25
 Training
@@ -227,7 +227,7 @@ Validation mAP: 0.057332202792167664
 
 Best model saved for: 3
 
-SAVING PLOTS COMPLETE...
+Plots saved...
 
 EPOCH 4 of 25
 Training
@@ -242,7 +242,7 @@ Validation mAP: 0.07370919734239578
 
 Best model saved for: 4
 
-SAVING PLOTS COMPLETE...
+Plots saved...
 
 EPOCH 5 of 25
 Training
@@ -257,7 +257,7 @@ Validation mAP: 0.08375780284404755
 
 Best model saved for: 5
 
-SAVING PLOTS COMPLETE...
+Plots saved...
 
 EPOCH 6 of 25
 Training
@@ -272,7 +272,7 @@ Validation mAP: 0.09984315186738968
 
 Best model saved for: 6
 
-SAVING PLOTS COMPLETE...
+Plots saved...
 
 EPOCH 7 of 25
 Training
@@ -287,7 +287,7 @@ Validation mAP: 0.10830517113208771
 
 Best model saved for: 7
 
-SAVING PLOTS COMPLETE...
+Plots saved...
 
 EPOCH 8 of 25
 Training
@@ -302,7 +302,7 @@ Validation mAP: 0.12411944568157196
 
 Best model saved for: 8
 
-SAVING PLOTS COMPLETE...
+Plots saved...
 
 EPOCH 9 of 25
 Training
@@ -317,7 +317,7 @@ Validation mAP: 0.13272695243358612
 
 Best model saved for: 9
 
-SAVING PLOTS COMPLETE...
+Plots saved...
 
 EPOCH 10 of 25
 Training
@@ -332,7 +332,7 @@ Validation mAP: 0.14352355897426605
 
 Best model saved for: 10
 
-SAVING PLOTS COMPLETE...
+Plots saved...
 
 EPOCH 11 of 25
 Training
@@ -347,7 +347,7 @@ Validation mAP: 0.1555180698633194
 
 Best model saved for: 11
 
-SAVING PLOTS COMPLETE...
+Plots saved...
 
 EPOCH 12 of 25
 Training
@@ -362,7 +362,7 @@ Validation mAP: 0.16520491242408752
 
 Best model saved for: 12
 
-SAVING PLOTS COMPLETE...
+Plots saved...
 
 EPOCH 13 of 25
 Training
@@ -377,7 +377,7 @@ Validation mAP: 0.1764284074306488
 
 Best model saved for: 13
 
-SAVING PLOTS COMPLETE...
+Plots saved...
 
 EPOCH 14 of 25
 Training
@@ -392,7 +392,7 @@ Validation mAP: 0.17996881902217865
 
 Best model saved for: 14
 
-SAVING PLOTS COMPLETE...
+Plots saved...
 
 EPOCH 15 of 25
 Training
@@ -407,7 +407,7 @@ Validation mAP: 0.18390017747879028
 
 Best model saved for: 15
 
-SAVING PLOTS COMPLETE...
+Plots saved...
 
 EPOCH 16 of 25
 Training
@@ -422,7 +422,7 @@ Validation mAP: 0.18707998096942902
 
 Best model saved for: 16
 
-SAVING PLOTS COMPLETE...
+Plots saved...
 
 EPOCH 17 of 25
 Training
@@ -437,7 +437,7 @@ Validation mAP: 0.18727265298366547
 
 Best model saved for: 17
 
-SAVING PLOTS COMPLETE...
+Plots saved...
 
 EPOCH 18 of 25
 Training
@@ -472,7 +472,7 @@ Validation mAP: 0.18857143819332123
 
 Best model saved for: 20
 
-SAVING PLOTS COMPLETE...
+Plots saved...
 
 EPOCH 21 of 25
 Training
@@ -507,7 +507,7 @@ Validation mAP: 0.19046680629253387
 
 Best model saved for: 23
 
-SAVING PLOTS COMPLETE...
+Plots saved...
 
 EPOCH 24 of 25
 Training
@@ -522,7 +522,7 @@ Validation mAP: 0.19148506224155426
 
 Best model saved for: 24
 
-SAVING PLOTS COMPLETE...
+Plots saved...
 
 EPOCH 25 of 25
 Training

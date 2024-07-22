@@ -98,9 +98,9 @@ for i in range(len(test_images)):
                 lineType=cv2.LINE_AA,
             )
 
-        cv2.imwrite(f"{out_dir}/target_ssd_e50_{image_name}.png", orig_image)
+        cv2.imwrite(f"{out_dir}/target_inference_{image_name}.png", orig_image)
     print(f"Image {i+1} done...")
-    print("-" * 50)
+    print("-" * 20)
 
 print("Inference complete !!")
 cv2.destroyAllWindows()

@@ -1,57 +1,77 @@
-# Note regarding compute resource
-In case you do not have computing resources of your own most of the time all of the work can be done through Google Cloud / Google Collab free trial.
-Let us know what resource you have used, and we will evaluate your assignment taking that into account.
-If you have still problems on acquiring enough computing resources to train for many epochs, please at __minimum__ make the model trainable so we can test it on our side.
+# "Bottle" and "Can" detector
+This project generates synthetic dataset for bottle and can  and train a object detector on the generated dataset. The dependencies for the code can be found in [requirements.txt](requirements.txt) file.To install the necessary dependencies, run the following command:
 
-# Telexistence Take Home Assignment
+```bash
+pip install -r requirements.txt
+```
 
-Your assignment is to generate synthetic dataset of bottles and cans and train an object detector model on the generated dataset.
+# Syntethic data generation
+The data generation code uses [Blender 3.4](https://docs.blender.org/api/3.4/) python API for rendering and capturing scenes to generate data. The code currently uses 5 `.hdr` background files in `hdris` folder. for every background, it generates 5 different camera angles and randomly places objects in the scene. So 1 batch of code generates `5*5 = 25` images. You can initiate data generation by executing the below command. 
+```bash
+python data_generate.py --dir dataset/train/images --ann dataset/train/annotations_train.json --batches 1
+```
+- **--dir** : type`str`. directory to store images generated. *default*: `dataset/train/images`
+- **--ann** : type`str`. directory and file with `.json` extension to store annotation file. *default*: `dataset/train/annotations_train.json`
+- **--batches** : type`int` Number of batches *default* : `1`
+> **NOTE**: This is an extensively RAM heavy code and still could use a lot of optimizations. depending on various random parameters it could take anywhere between 2 to 4 minutes to generate one image and at its peak could use 2 to 4 GB of RAM at once.
 
-Model performance will be evaluated using the `target_images`. Apply your detector on these images and save the result.
+<img src="dataset/train/images/Image_0.png" alt="Image Sample" width="400"/>
 
-Note that the complexity (image lighting conditions, drink occlusion, etc.) of each drink's detection will be taken into account in our evaluation.
 
-However you are not expected to try to detect everything perfectly, since you will be asked to train a network PURELY from the synthetic images you have generated.
 
-NOTE: You are not allowed to use a fully pre-trained model for this assignment, but you can use a pretrained backbone for feature extraction. If you choose to use a pretrained
-backbone then make sure to inform us of this decision either through Slack or on the repository README.md.
+# Object detector
+Below explained are the indiviual components of this model. We need to setup `config.py` file with some configurations like`batch_size`,`epochs`,`res_dir` etc. Please refer to [config.py](config.py) to set the dependencies.
+## Data loader
+The model uses `CustomDataset` class implemented in [datasets.py](datasets.py) file to retrieve data and its respective annotations from the provided directories in `config.py`. You can run the following command
+```bash
+python datasets.py
+```
+After successful  execution, the code should generate sample images with annotations for visualization purposes.
+![Data Loader Sample](dataset_vis_0.png)
 
-NOTE2: For the object detector training and evaluation we encourage you to implement parts from "scratch" (e.g. your own code) when you can, thought not required. E.g. avoiding high-level APIs when training and evaluating your detector in your implementation would be ideal and will allow us to evaluate your skills in more depth.
+## Model
 
-## Task objective:
-- Detection output needs to be the object category class (e.g. bottle or can), and its bounding box or segmentation
-- Generate synthetic dataset for detecting bottles and cans
-    - As the assignment time is limited we recommend using existing repository for the data generation. Some examples of good choices would be `blenderproc` (github.com/DLR-RM/BlenderProc) or `kubric` (github.com/google-research/kubric) that use blender for the simulation, but please choose the one you are most comfortable with!
-    - Domain randomization techinques is encouraged to be used to boost the performance
-    - We provide simple example syntethic data generation script using blender. It uses blender's `Eevee` to render the image. It is just meant to showcase how automated data generation could be done if you are not familiar with it, but feel free to use it as the base for your implementation in case you plan to also use blender. After installing blender you can execute the code with `{your-blender-executable} -b -P blender_generate_annotations.py` on Linux. You can also run it within blender from the `Text Editor` section. Script was tested on blender versions: 2.9, 3.2, 3.3 & 3.4
-- For creating the object detector model to train on your synthethic data:
-    1. You may choose the model of your preference and use fully "prebuild" model (like the one on `ssdlite_example.py`).
-    2. (Optional) you can make your own custom object detector class following the instructions on `template_model.py`. You may use "prebuild" parts gotten from other repos for the detector (e.g. backbone, neck, head, etc.). Main point is to have all of them connected on the forward pass so the detection works and everything is initilized from the `__init__` function. If you are able to make the custom model working with decent results we will consider it more favorably than when using a fully "prebuild" model mentioned on (1.).
-    3. (Optional) if you plan to make a "prebuild" model mentioned on (1.), modifying the default loss function used with the model and showing that it can achieve better results will be considered as a plus.
-    4. (Optional) if don't have time for (2.) and (3.), still proposing ideas on how to improve the current chosen model architecture or loss function can also be potentially considered as a plus.
-- Apply detector to `target_images` and save detected images as well as the annotations in any format (.pickle / .json etc)
-- We have supplied an example model in the `ssdlite_example.py` that can be used in case you want to do quick initial experiments on the synthethic data quality and augmentation pipeline. Thought you can use any model for this purpose too!
+The model(s) for this is implemented in [model.py](model.py) file. There are implementation of 2 models in this file.
 
-NOTE: For the synthethic data generation you are welcome to use/add other 3d models than the ones we initially provide. There are no limitations regarding it.
+- `InbuiltSSD` : Here I used the inbuilt [SSD300](https://pytorch.org/vision/main/models/generated/torchvision.models.detection.ssd300_vgg16.html) model with pretrained `COCO` weights with a modified classification head for our use case.
+- `ResnetWithAnchors` : This is the implementation of a custom **SSD** model that uses [ResNet](https://pytorch.org/vision/main/models/generated/torchvision.models.resnet34.html) architecture with pre-trained `ImageNet` weights as the backbone and custom anchors of `[2,3,4]` aspect ratios for the classification head.
 
-NOTE2: In case you decided to use a guide or an existing implementation for data generation, please do not simply copy paste their implementation and add your own touch to it. For example most of the time the guides just offer basic introduction to domain randomization and not actually promise great results when used for training so it's better to add your own too. Also it helps us to review your skills better the more the implementation is made by you. Thought of course we know the fact that you have limited time available for the assignment so just do what you can here!
+> **NOTE**: This version of the project, it is required user to manually switch between the models. The code currently uses `InbuiltSSD` architecture for training and inference. If you want to use `ResnetWithAnchors` architecture you need to make changes in [model.py \(ln 66\)](https://github.com/rvnandwani/drink_detection_tele/blob/412920c6dc5c9070781fdd303e5db13331ea5e83/model.py#L65) , [train.py \(ln 104\)](https://github.com/rvnandwani/drink_detection_tele/blob/5f3bd063e3c4b4d3824912caa9b984ace7322f7b/train.py#L104) , 
+ and [inference.py \(ln 38\)](https://github.com/rvnandwani/drink_detection_tele/blob/412920c6dc5c9070781fdd303e5db13331ea5e83/inference.py#L38)
 
-## Deliverables
-- Source code for the whole implementation, e.g. synthethic data generation, training & eval script, etc.
-    - Properly git managed repository is required. Using github private repository would be easy to track the intermediate development
-    - NOTE: in case you have been using notebooks (.ipynb) in your experimenting phase please turn all the source code to python scripts (.py) for the final submission
-- Reasoning of the network architecture selection
-- future improvement section is required
-- Synthetic dataset and model weights
-- Object detector's best weights training session log(s) that contains all the info (hyperparameters used, random seeds, image ids of training and validation dataset, etc.) needed to replicate the same results. In case if you could not get this far then this can be left out!
+You can run the following to display model and its architecture.
+```bash
+python model.py
+```
 
-### Additionally
-- Active communication through slack if there're any questions is required, and is part of the process
-- You have 7 days max duration for this assignment.
+## Training
+The file [train.py](train.py) is responsible for model training. Model will be trained for `epochs` with `batch_size` and output model checkpoint and plots will be stored in `res_dir` as specified in [config.py](config.py). The model uses `torchmetrics` inbuilt `MeanAveragePrecision` function to keep track of the accuracy and save both `best_model.pth` and `last_model` along with `mAP` and `training_loss` graphs.
+You can run training by running the following command
+```bash
+python train.py | tee output_logs.txt
+```
+You can find my training logs for [`ResnetWithAnchors`](outputs_resnet_e25/Resnet_logs.txt) and [`InbuiltSSD`](outputs_ssd_e35/SSD_logs.txt)
 
-You can use `submission_template.md` as reference for writing your own implementation's README.md
+## Inference
+Once the training is done we can run the following command to generate inferences from the model
+```bash
+python inference.py --input target_images --model outputs/best_model.pth --output inference_outputs/images
+```
+- **--input** : type`str`. directory for input images on which inference will be conducted
+- **--model** : type`str`. directory and file of model checkpoint to be used. *default*: `outputs/best_model.pth`
+- **--output** : type`str`Number of batches *default* : `inference_outputs/images`
 
-## Other notes
-- __We DO NOT expect everything to be done perfectly. Even if there're components that aren't met, do not worry about it, and please try to deliver your best instead.__
-- Feel free to chat with the team members via slack any time, as we are also evaluating the discussion / communication skills here.
-- Any further explanation requests are also welcome.
+## Observation and Results
+
+### Reason for the model
+
+I used `InbuiltSSD` model because of its known versatility and performance, being optimized and trained on COCO dataset it has been known to perform well in all general object scenarios. So this model generates good results and establishes benchmarks for me to compare with my own implementation.
+There were multiple motivations for me to make my own model. When we see the SSD300 architecture it uses VGG16 like backbone for feature extraction. I experimented with using a ResNet architecture for the same as ResNet architecture helps with capturing hierarchical features at various image sizes. For the head, I experimented with custom anchors of 3 different aspect ratios to capture the tall objects of our use case as both test and training images had tall standing bottles
+
+### Observation
+Visually inspecting the `target_images` \[[SSD](inference_outputs/ssd_target_images/) , [ResNet](inference_outputs/resnet_target_images/) \] and validation set results\[[SSD](inference_outputs/ssd_val_images/) , [ResNet](inference_outputs/resnet_val_images) \], along with observing the `mAP` plots of validation set, `InbuiltSSD` model outperforms our custom `ResnetWithAnchors` model I could think of the following reasons for the same
+1. `ResnetWithAnchors` classification head is not flexible in handling varying object sizes as it has uniform channels for feature extraction and classification
+2. The presence of relatively more wide range of scale i.e. 0.07 to 1.05 in `InbuiltSSD` model compared to 0.15 to 1.0 in `ResnetWithAnchors` could have provided finer granularity for smaller objects combined with the `steps` could help in better localization as well.
+
+### Future Improvements
+Data generation code could be optimized further to generate even more samples with almost similar resources. For example, the current version renders a whole scene with all the background, camera positions, and other assets for every image that gets generated, so instead of that, once the scene is rendered we can try different camera angles and light parameters and positions in that scene itself with all its objects and backgrounds to generate images rather than generating the whole scene again. To further improve the dataset quality I would explore the blender library more and try to generate more life-like data with varied lighting conditions and different light types, add reflection and transparent surfaces (for bottles), and include some real-life annotated data \(as in `target_images`\) and train the model again. Based on the requirement, I would try and clean the data in a way that heavily occluded objects don't get included in the training set as that might be hurting the performance of accurately detecting objects, so setting some threshold like min 20% of the object is visible in the frame then only it should get annotated and trained upon. This might help in reducing the significant number of False positives in our inference. That would help in achieving better accuracy in real-life implementations. I will experiment with the above-mentioned observations and inferences to improve the model architecture as well.
